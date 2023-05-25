@@ -28,12 +28,11 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.textContent = card.answer; // Display the answer content
+  answerContent.textContent = '';
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
 }
-
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
@@ -41,7 +40,19 @@ function flipCard() {
 }
 
 function nextCard() {
-  currentCardIndex = (currentCardIndex + 1) % cardData.length;
+  const currentCard = cardData[currentCardIndex];
+  const cardContainer = document.querySelector('.card-container');
+
+  // Check if the card is currently flipped to show the answer
+  if (cardContainer.classList.contains('flip')) {
+    // Flip the card back to show the question
+    cardContainer.classList.remove('flip');
+  } else {
+    // Proceed to the next card index
+    currentCardIndex = (currentCardIndex + 1) % cardData.length;
+  }
+
+  // Show the next card
   showCard(currentCardIndex);
 }
 
@@ -53,5 +64,5 @@ fetch('flashcards.csv')
   })
   .catch(error => console.log('Error fetching CSV:', error));
 
-document.getElementById('flip-button').addEventListener('click', () => flipCard());
+document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
