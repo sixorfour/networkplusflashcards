@@ -31,8 +31,13 @@ function showCard(index) {
   questionContent.textContent = card.question;
   answerContent.textContent = card.answer;
 
-  questionHeader.textContent = 'Question';
-  answerHeader.textContent = 'Answer';
+  if (isAnswerDisplayed) {
+    questionHeader.textContent = ''; // Hide the question header
+    answerHeader.textContent = 'Answer';
+  } else {
+    questionHeader.textContent = 'Question';
+    answerHeader.textContent = '';
+  }
 }
 
 function flipCard() {
