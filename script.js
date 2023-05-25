@@ -28,7 +28,12 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.textContent = card.answer;
+  answerContent.textContent = ''; // Clear the answer content initially
+
+  questionHeader.textContent = 'Question';
+  answerHeader.textContent = 'Answer';
+}
+
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
