@@ -34,6 +34,7 @@ function showCard(index) {
   answerHeader.textContent = 'Answer';
 }
 
+
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
   cardContainer.classList.toggle('flip');
