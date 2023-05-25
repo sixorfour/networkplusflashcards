@@ -5,7 +5,7 @@ var answerContent = document.getElementById('answerContent');
 var cardData = [];
 var currentCardIndex = 0;
 
-fetch('safari_animals.csv')
+fetch('./safari_animals.csv')
   .then(response => response.text())
   .then(data => {
     cardData = parseCSV(data);
