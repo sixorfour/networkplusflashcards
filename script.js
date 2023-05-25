@@ -1,5 +1,6 @@
 let cardData = [];
 let currentCardIndex = 0;
+let isAnswerDisplayed = false;
 
 function parseCSV(csv) {
   const lines = csv.split('\n');
@@ -30,23 +31,24 @@ function showCard(index) {
   questionContent.textContent = card.question;
   answerContent.textContent = card.answer; // Display the answer content
 
-  questionHeader.textContent = 'Question';
-  answerHeader.textContent = 'Answer';
+  if (isAnswerDisplayed) {
+    questionHeader.textContent = 'Question';
+    answerHeader.textContent = '';
+  } else {
+    questionHeader.textContent = '';
+    answerHeader.textContent = 'Answer';
+  }
 }
-
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
   cardContainer.classList.toggle('flip');
+  isAnswerDisplayed = !isAnswerDisplayed;
 }
 
 function nextCard() {
-  if (document.getElementById('answer-header').textContent === 'Answer') {
-    // If the previous card was displaying the answer, skip to the next card
-    currentCardIndex = (currentCardIndex + 1) % cardData.length;
-  }
-  
-  // Show the next card as a question
+  currentCardIndex = (currentCardIndex + 1) % cardData.length;
+  isAnswerDisplayed = false; // Reset the answer display state
   showCard(currentCardIndex);
 }
 
@@ -58,5 +60,5 @@ fetch('flashcards.csv')
   })
   .catch(error => console.log('Error fetching CSV:', error));
 
-document.getElementById('flip-button').addEventListener('click', () => flipCard());
+document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
