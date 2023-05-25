@@ -28,7 +28,7 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.textContent = '';
+  answerContent.textContent = card.answer; // Display the answer content
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
