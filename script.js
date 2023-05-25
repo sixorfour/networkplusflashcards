@@ -4,7 +4,7 @@ let currentCardIndex = 0;
 function parseCSV(csv) {
   const lines = csv.split('\n');
   const headers = lines[0].split(',');
-  cardData = []; // Corrected variable declaration
+  cardData = [];
 
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].split(',');
@@ -28,10 +28,15 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.textContent = ''; // Clear the answer content initially
+  answerContent.textContent = '';
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
+}
+
+function flipCard() {
+  const card = document.getElementById('card');
+  card.classList.toggle('flip');
 }
 
 function nextCard() {
@@ -47,8 +52,5 @@ fetch('flashcards.csv')
   })
   .catch(error => console.log('Error fetching CSV:', error));
 
+document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
-
-
-
-
