@@ -1,46 +1,50 @@
-var flipButton = document.querySelector('.flip-button');
-var flashcard = document.querySelector('.flashcard');
-var questionContent = document.getElementById('questionContent');
-var answerContent = document.getElementById('answerContent');
-var cardData = [];
-var currentCardIndex = 0;
+let cardData = [];
+let currentCardIndex = 0;
 
-fetch('flashcards.csv')
+function parseCSV(csv) {
+  const lines = csv.split('\n');
+  const headers = lines[0].split(',');
+  const cardData = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    const values = lines[i].split(',');
+    const card = {};
+
+    for (let j = 0; j < headers.length; j++) {
+      card[headers[j]] = values[j];
+    }
+
+    cardData.push(card);
+  }
+
+  return cardData;
+}
+
+function showCard(index) {
+  const card = cardData[index];
+  const questionHeader = document.getElementById('question-header');
+  const answerHeader = document.getElementById('answer-header');
+  const questionContent = document.getElementById('question-content');
+  const answerContent = document.getElementById('answer-content');
+
+  questionContent.textContent = card.question;
+  answerContent.textContent = card.answer;
+
+  questionHeader.textContent = 'Question';
+  answerHeader.textContent = 'Answer';
+}
+
+function nextCard() {
+  currentCardIndex = (currentCardIndex + 1) % cardData.length;
+  showCard(currentCardIndex);
+}
+
+fetch('safari_animals.csv')
   .then(response => response.text())
   .then(data => {
     cardData = parseCSV(data);
     showCard(currentCardIndex);
   })
-  .catch(error => console.log("Error fetching CSV:", error));
+  .catch(error => console.log('Error fetching CSV:', error));
 
-
-
-flipButton.addEventListener('click', function() {
-    flashcard.classList.toggle('flip');
-});
-
-function showCard(index) {
-    if (index >= 0 && index < cardData.length) {
-        var card = cardData[index];
-        questionContent.textContent = card.question;
-        answerContent.textContent = card.answer;
-    }
-}
-
-
-
-function parseCSV(csv) {
-    var lines = csv.trim().split('\n');
-    var headers = lines.shift().split(',');
-
-    return lines.map(line => {
-        var values = line.split(',');
-        var card = {};
-
-        headers.forEach((header, index) => {
-            card[header.trim()] = values[index].trim();
-        });
-
-        return card;
-    });
-}
+document.getElementById('next-button').addEventListener('click', nextCard);
