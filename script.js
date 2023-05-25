@@ -46,16 +46,14 @@ function nextCard() {
   const answerContent = document.getElementById('answer-content');
 
   if (answerHeader.textContent === 'Answer') {
-    questionHeader.textContent = 'Question';
-    questionContent.textContent = '';
-  } else {
-    answerHeader.textContent = 'Answer';
+    answerHeader.textContent = 'Question';
     answerContent.textContent = '';
+  } else {
+    currentCardIndex = (currentCardIndex + 1) % cardData.length;
+    showCard(currentCardIndex);
   }
-
-  currentCardIndex = (currentCardIndex + 1) % cardData.length;
-  showCard(currentCardIndex);
 }
+
 
 
 
