@@ -39,7 +39,7 @@ function nextCard() {
   showCard(currentCardIndex);
 }
 
-fetch('safari_animals.csv')
+fetch('flashcards.csv')
   .then(response => response.text())
   .then(data => {
     cardData = parseCSV(data);
@@ -48,3 +48,7 @@ fetch('safari_animals.csv')
   .catch(error => console.log('Error fetching CSV:', error));
 
 document.getElementById('next-button').addEventListener('click', nextCard);
+
+
+
+
