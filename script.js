@@ -1,6 +1,6 @@
 let cardData = [];
 let currentCardIndex = 0;
-let isAnswerDisplayed = false;
+let isAnswerDisplayed = false; // Track the answer display state
 
 function parseCSV(csv) {
   const lines = csv.split('\n');
@@ -29,21 +29,16 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.textContent = card.answer; // Display the answer content
+  answerContent.textContent = card.answer;
 
-  if (isAnswerDisplayed) {
-    questionHeader.textContent = 'Question';
-    answerHeader.textContent = '';
-  } else {
-    questionHeader.textContent = '';
-    answerHeader.textContent = 'Answer';
-  }
+  questionHeader.textContent = 'Question';
+  answerHeader.textContent = 'Answer';
 }
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
   cardContainer.classList.toggle('flip');
-  isAnswerDisplayed = !isAnswerDisplayed;
+  isAnswerDisplayed = !isAnswerDisplayed; // Toggle the answer display state
 }
 
 function nextCard() {
@@ -53,7 +48,6 @@ function nextCard() {
   cardContainer.classList.remove('flip'); // Ensure the question side is shown
   showCard(currentCardIndex);
 }
-
 
 fetch('flashcards.csv')
   .then(response => response.text())
