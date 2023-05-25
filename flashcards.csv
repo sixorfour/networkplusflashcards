@@ -1,0 +1,11 @@
+question,answer
+What is the purpose of a subnet mask?,A subnet mask is used to determine the network and host portions of an IP address.
+What is the default subnet mask for a Class C IP address?,255.255.255.0
+What is the maximum transmission unit (MTU)?,The maximum transmission unit (MTU) is the largest packet size that can be transmitted over a network.
+What is the purpose of a DNS server?,A DNS server translates domain names into IP addresses, allowing devices to locate resources on a network or the internet.
+What is the difference between TCP and UDP?,TCP (Transmission Control Protocol) is a connection-oriented protocol that provides reliable, ordered, and error-checked delivery of data. UDP (User Datagram Protocol) is a connectionless protocol that provides fast, but unreliable delivery of data.
+What is a MAC address?,A MAC (Media Access Control) address is a unique identifier assigned to network interfaces for communications on a network segment.
+What is the purpose of NAT (Network Address Translation)?,NAT allows multiple devices on a private network to share a single public IP address, enabling them to access the internet.
+What is a VLAN (Virtual Local Area Network)?,A VLAN is a logical grouping of devices on a network, even if they are not physically located on the same network segment.
+What is the purpose of a firewall?,A firewall is a network security device that monitors and filters incoming and outgoing network traffic based on predefined security rules.
+What is the difference between a hub, switch, and router?,A hub is a basic networking device that connects multiple devices in a network. A switch is an intelligent device that forwards network packets to the intended destination. A router is a networking device that connects multiple networks and routes packets between them.
