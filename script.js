@@ -4,7 +4,7 @@ let currentCardIndex = 0;
 function parseCSV(csv) {
   const lines = csv.split('\n');
   const headers = lines[0].split(',');
-  const cardData = [];
+  cardData = []; // Corrected variable declaration
 
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].split(',');
@@ -29,11 +29,6 @@ function showCard(index) {
 
   questionContent.textContent = card.question;
   answerContent.textContent = ''; // Clear the answer content initially
-
-  questionHeader.textContent = 'Question';
-  answerHeader.textContent = 'Answer';
-}
-
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
