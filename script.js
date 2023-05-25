@@ -40,17 +40,16 @@ function flipCard() {
 }
 
 function nextCard() {
-  const currentCard = cardData[currentCardIndex];
-  const cardContainer = document.querySelector('.card-container');
+  const answerHeader = document.getElementById('answer-header');
+  const answerContent = document.getElementById('answer-content');
+  
+  answerHeader.textContent = 'Answer';
+  answerContent.textContent = '';
 
-  // Check if the card is currently flipped to show the answer
-  if (cardContainer.classList.contains('flip')) {
-    // Flip the card back to show the question
-    cardContainer.classList.remove('flip');
-  } else {
-    // Proceed to the next card index
-    currentCardIndex = (currentCardIndex + 1) % cardData.length;
-  }
+  currentCardIndex = (currentCardIndex + 1) % cardData.length;
+  showCard(currentCardIndex);
+}
+
 
   // Show the next card
   showCard(currentCardIndex);
