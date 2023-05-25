@@ -49,8 +49,11 @@ function flipCard() {
 function nextCard() {
   currentCardIndex = (currentCardIndex + 1) % cardData.length;
   isAnswerDisplayed = false; // Reset the answer display state
+  const cardContainer = document.querySelector('.card-container');
+  cardContainer.classList.remove('flip'); // Ensure the question side is shown
   showCard(currentCardIndex);
 }
+
 
 fetch('flashcards.csv')
   .then(response => response.text())
