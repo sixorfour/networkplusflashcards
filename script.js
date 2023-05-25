@@ -40,15 +40,23 @@ function flipCard() {
 }
 
 function nextCard() {
+  const questionHeader = document.getElementById('question-header');
   const answerHeader = document.getElementById('answer-header');
+  const questionContent = document.getElementById('question-content');
   const answerContent = document.getElementById('answer-content');
-  
-  answerHeader.textContent = 'Answer';
-  answerContent.textContent = '';
+
+  if (answerHeader.textContent === 'Answer') {
+    questionHeader.textContent = 'Question';
+    questionContent.textContent = '';
+  } else {
+    answerHeader.textContent = 'Answer';
+    answerContent.textContent = '';
+  }
 
   currentCardIndex = (currentCardIndex + 1) % cardData.length;
   showCard(currentCardIndex);
 }
+
 
 
   // Show the next card
