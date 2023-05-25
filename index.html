@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 <head>
-    <title>Flash Card Learning</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Flashcards</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Flash Card Learning</h1>
-
-    <div class="flashcard">
-        <div class="card-inner">
-            <div class="card-front">
-                <h2>Question</h2>
-                <p id="questionContent">Loading...</p>
-            </div>
-            <div class="card-back">
-                <h2>Answer</h2>
-                <p id="answerContent">Loading...</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="card">
+      <h2 id="question-header">Question</h2>
+      <p id="question-content"></p>
     </div>
-
-    <button class="flip-button">Flip Card</button>
-
-    <script src="script.js"></script>
+    <div class="card">
+      <h2 id="answer-header">Answer</h2>
+      <p id="answer-content"></p>
+    </div>
+    <button id="flip-button">Flip Card</button>
+    <button id="next-button">Next</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
