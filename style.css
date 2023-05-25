@@ -48,27 +48,3 @@ body {
 .flip-button {
     margin-top: 20px;
 }
-.card {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-  width: 400px;
-  max-width: 100%;
-}
-
-h2 {
-  margin: 0;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #45a049;
-}
