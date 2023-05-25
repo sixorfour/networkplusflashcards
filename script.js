@@ -28,11 +28,12 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.textContent = '';
+  answerContent.textContent = card.answer; // Display the answer content
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
 }
+
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
@@ -40,24 +41,7 @@ function flipCard() {
 }
 
 function nextCard() {
-  const questionHeader = document.getElementById('question-header');
-  const answerHeader = document.getElementById('answer-header');
-  const questionContent = document.getElementById('question-content');
-  const answerContent = document.getElementById('answer-content');
-
-  if (answerHeader.textContent === 'Answer') {
-    answerHeader.textContent = 'Question';
-    answerContent.textContent = '';
-  } else {
-    currentCardIndex = (currentCardIndex + 1) % cardData.length;
-    showCard(currentCardIndex);
-  }
-}
-
-
-
-
-  // Show the next card
+  currentCardIndex = (currentCardIndex + 1) % cardData.length;
   showCard(currentCardIndex);
 }
 
@@ -69,5 +53,5 @@ fetch('flashcards.csv')
   })
   .catch(error => console.log('Error fetching CSV:', error));
 
-document.getElementById('flip-button').addEventListener('click', flipCard);
+document.getElementById('flip-button').addEventListener('click', () => flipCard());
 document.getElementById('next-button').addEventListener('click', nextCard);
