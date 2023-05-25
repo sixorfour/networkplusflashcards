@@ -32,11 +32,12 @@ function showCard(index) {
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
-}
 
-function flipCard() {
-  const card = document.querySelector('.card');
-  card.classList.toggle('flip');
+  const flipButton = document.getElementById('flip-button');
+  flipButton.addEventListener('click', () => {
+    const cardContainer = document.querySelector('.card-container');
+    cardContainer.classList.toggle('flip');
+  });
 }
 
 function nextCard() {
@@ -52,5 +53,4 @@ fetch('flashcards.csv')
   })
   .catch(error => console.log('Error fetching CSV:', error));
 
-document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
