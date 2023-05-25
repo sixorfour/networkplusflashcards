@@ -52,5 +52,5 @@ fetch('flashcards.csv')
   })
   .catch(error => console.log('Error fetching CSV:', error));
 
-document.getElementById('flip-button').addEventListener('click', flipCard);
+document.getElementById('flip-button').addEventListener('click', () => flipCard());
 document.getElementById('next-button').addEventListener('click', nextCard);
