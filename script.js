@@ -5,35 +5,31 @@ let isAnswerDisplayed = false; // Track the answer display state
 function parseCSV(csv) {
   const lines = csv.split('\n');
   const headers = lines[0].split(',');
-  const cardData = [];
+  cardData = [];
 
   for (let i = 1; i < lines.length; i++) {
-    const values = lines[i].split(',');
-    const card = {};
+    const values = [];
+    let current = '';
+    let withinQuotes = false;
 
-    for (let j = 0; j < headers.length; j++) {
-      const key = headers[j];
-      let value = values[j];
+    for (let j = 0; j < lines[i].length; j++) {
+      const char = lines[i][j];
 
-      // Handle values with commas
-      if (value.startsWith('"') && value.endsWith('"')) {
-        // Remove double quotes at the start and end
-        value = value.slice(1, -1);
-      } else if (value.startsWith('"')) {
-        // Value starts with a double quote, but does not end with it
-        // Concatenate subsequent values until a closing double quote is found
-        value = value.slice(1);
-
-        while (!value.endsWith('"') && j + 1 < values.length) {
-          j++;
-          value += `,${values[j]}`;
-        }
-
-        // Remove double quotes at the end
-        value = value.slice(0, -1);
+      if (char === '"') {
+        withinQuotes = !withinQuotes;
+      } else if (char === ',' && !withinQuotes) {
+        values.push(current.trim());
+        current = '';
+      } else {
+        current += char;
       }
+    }
 
-      card[key] = value;
+    values.push(current.trim());
+
+    const card = {};
+    for (let j = 0; j < headers.length; j++) {
+      card[headers[j]] = values[j];
     }
 
     cardData.push(card);
@@ -41,8 +37,6 @@ function parseCSV(csv) {
 
   return cardData;
 }
-
-
 
 
 
