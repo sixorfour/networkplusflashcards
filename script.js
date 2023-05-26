@@ -26,16 +26,16 @@ function parseCSV(csv) {
 
 function showCard(index) {
   const card = cardData[index];
-  const questionHeader = document.getElementById('question-header');
-  const answerHeader = document.getElementById('answer-header');
   const questionContent = document.getElementById('question-content');
   const answerContent = document.getElementById('answer-content');
 
-  questionContent.textContent = card.question;
-  answerContent.textContent = card.answer; // Display the answer content
-
-  questionHeader.textContent = 'Question';
-  answerHeader.textContent = 'Answer';
+  if (card) {
+    questionContent.textContent = card.question;
+    answerContent.textContent = card.answer;
+  } else {
+    questionContent.textContent = 'No card available';
+    answerContent.textContent = 'No card available';
+  }
 }
 
 function flipCard() {
@@ -48,13 +48,6 @@ function nextCard() {
   showCard(currentCardIndex);
 }
 
-function extCSV(csvData) {
-  console.log(csvData);
-  (data => {
-    cardData = parseCSV(data);
-    showCard(currentCardIndex);
-  })
-}
-
-document.getElementById('flip-button').addEventListener('click', () => flipCard());
+document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
+
