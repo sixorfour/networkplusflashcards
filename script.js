@@ -32,7 +32,7 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.textContent = card.answer; // Display the answer content
+  answerContent.textContent = card.answer;
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
@@ -49,12 +49,31 @@ function nextCard() {
 }
 
 function extCSV(csvData) {
-  console.log(csvData);
-  (data => {
-    cardData = parseCSV(data);
-    showCard(currentCardIndex);
-  })
+  cardData = parseCSV(csvData);
+  showCard(currentCardIndex);
 }
 
-document.getElementById('flip-button').addEventListener('click', () => flipCard());
+document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
+
+var csvFileInput = document.getElementById('csvFileInput');
+csvFileInput.addEventListener('change', function(event) {
+  var csvfile = event.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var csvData = e.target.result;
+    extCSV(csvData);
+  };
+  reader.readAsText(csvfile);
+});
+
+document.getElementById('submit-button').addEventListener('click', function() {
+  var csvFileInput = document.getElementById('csvFileInput');
+  var csvfile = csvFileInput.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var csvData = e.target.result;
+    extCSV(csvData);
+  };
+  reader.readAsText(csvfile);
+});
