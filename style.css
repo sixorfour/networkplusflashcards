@@ -10,15 +10,20 @@ body {
   margin-top: 50px;
 }
 
+.file-input-container {
+  margin-bottom: 20px;
+}
+
 .card-container {
-  width: 300px;
-  height: 200px;
+  width: 500px;
+  height: 300px;
   background-color: #f1f1f1;
   margin: 20px auto;
   border: 1px solid #ccc;
   border-radius: 5px;
   position: relative;
   perspective: 1000px;
+  overflow: hidden; /* Ensure content is contained within card */
 }
 
 .card-container.flip .card-inner {
@@ -31,6 +36,8 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-front,
@@ -41,15 +48,12 @@ body {
   top: 0;
   left: 0;
   backface-visibility: hidden;
-}
-
-.card-front {
-  z-index: 2;
-  transform: rotateY(0);
+  padding: 0px; /* Add padding to create spacing within the cards */
 }
 
 .card-back {
   transform: rotateY(-180deg);
+  overflow: auto; /* Allow content to scroll within card */
 }
 
 .button-container {
@@ -57,3 +61,32 @@ body {
   justify-content: center;
   margin-top: 20px;
 }
+
+/* Additional styles for question and answer headers */
+#question-header,
+#answer-header {
+  margin-bottom: 10px; /* Add spacing between header and content */
+}
+
+/* Additional styles for question and answer content */
+#question-content {
+  margin-top: 10px; /* Add spacing between header and content */
+  display: block; /* Ensure the question content is displayed as a block */
+},
+#answer-content {
+  margin-top: 10px; /* Add spacing between header and content */
+  display: block; /* Ensure the question content is displayed as a block */
+}
+
+/* Additional Styles */
+#question-wrapper {
+  
+}
+
+#answer-wrapper {
+  
+  align-items: center;
+  height: 50%;
+  
+}
+

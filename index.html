@@ -8,6 +8,10 @@
 <body>
   <h3>Upload a simple csv with a question and answer header. put question and answer information into CSV document accordingly. upload CSV for flashcard functionality. you can use <a href="https://sixorfour.github.io/networkplusflashcards/flashcards.csv">this example file</a> for reference.</h3>
   <div class="container">
+    <div class="file-input-container">
+      <label for="csvFileInput">Choose File:</label>
+      <input type="file" id="csvFileInput" title="Upload CSV file">
+    </div>
     <div class="card-container">
       <div class="card-inner">
         <div class="card-front">
@@ -15,9 +19,17 @@
           <p id="question-content"></p>
         </div>
         <div class="card-back">
-          <h2 id="answer-header">Answer</h2>
-          <p id="answer-content"></p>
-        </div>
+  <div id="question-wrapper">
+    <h2 id="question-header">Question</h2>
+    <p id="question-content"></p>
+  </div>
+  <div id="answer-wrapper">
+    <hr>
+    <h2 id="answer-header">Answer</h2>
+    <p id="answer-content"></p>
+  </div>
+</div>
+
       </div>
     </div>
     <div class="button-container">
@@ -25,7 +37,6 @@
       <button id="next-button">Next</button>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.0/papaparse.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
