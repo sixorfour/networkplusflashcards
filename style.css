@@ -84,8 +84,8 @@ body {
 }
 
 #answer-wrapper {
-  margin-top: 20px; /* Add margin above the horizontal line break */
-  padding-top: 10px; /* Add padding to create space below the question content */
+  margin-top: 50px; /* Add margin above the horizontal line break */
+  padding-top: 100px; /* Add padding to create space below the question content */
   border-top: 1px solid #ccc; /* Add a horizontal line break */
 }
 
