@@ -1,21 +1,18 @@
 let cardData = [];
 let currentCardIndex = 0;
+let isAnswerDisplayed = false; // Track the answer display state
 
 function parseCSV(csv) {
   const lines = csv.split('\n');
   const headers = lines[0].split(',');
+  cardData = [];
 
-  const cardData = [];
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].split(',');
-    if (values.length !== headers.length) {
-      continue; // Skip invalid rows with mismatched values
-    }
     const card = {};
 
     for (let j = 0; j < headers.length; j++) {
-      const value = values[j].trim();
-      card[headers[j]] = value;
+      card[headers[j]] = values[j];
     }
 
     cardData.push(card);
@@ -32,19 +29,28 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.textContent = card.answer; // Display the answer content
+  answerContent.textContent = card.answer;
 
-  questionHeader.textContent = 'Question';
-  answerHeader.textContent = 'Answer';
+  if (isAnswerDisplayed) {
+    questionHeader.textContent = ''; // Hide the question header
+    answerHeader.textContent = 'Answer';
+  } else {
+    questionHeader.textContent = 'Question';
+    answerHeader.textContent = '';
+  }
 }
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
   cardContainer.classList.toggle('flip');
+  isAnswerDisplayed = !isAnswerDisplayed; // Toggle the answer display state
 }
 
 function nextCard() {
   currentCardIndex = (currentCardIndex + 1) % cardData.length;
+  isAnswerDisplayed = false; // Reset the answer display state
+  const cardContainer = document.querySelector('.card-container');
+  cardContainer.classList.remove('flip'); // Ensure the question side is shown
   showCard(currentCardIndex);
 }
 
@@ -56,5 +62,5 @@ fetch('flashcards.csv')
   })
   .catch(error => console.log('Error fetching CSV:', error));
 
-document.getElementById('flip-button').addEventListener('click', () => flipCard());
+document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
