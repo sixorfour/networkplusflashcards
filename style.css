@@ -1,4 +1,4 @@
-.body {
+body {
   font-family: Arial, sans-serif;
   text-align: center;
 }
@@ -10,6 +10,10 @@
   margin-top: 50px;
 }
 
+.file-input-container {
+  margin-bottom: 20px;
+}
+
 .card-container {
   width: 500px;
   height: 300px;
@@ -19,6 +23,7 @@
   border-radius: 5px;
   position: relative;
   perspective: 1000px;
+  overflow: hidden; /* Ensure content is contained within card */
 }
 
 .card-container.flip .card-inner {
@@ -51,24 +56,11 @@
 .card-back {
   z-index: 2;
   transform: rotateY(-180deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow: auto; /* Allow content to scroll within card */
 }
 
-#question-wrapper {
+.button-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-#answer-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#answer-header {
+  justify-content: center;
   margin-top: 20px;
 }
