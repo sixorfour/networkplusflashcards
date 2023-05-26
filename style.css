@@ -69,7 +69,10 @@ body {
 }
 
 /* Additional styles for question and answer content */
-#question-content,
+#question-content {
+  margin-top: 10px; /* Add spacing between header and content */
+  display: block; /* Ensure the question content is displayed as a block */
+}
 #answer-content {
   margin-top: 10px; /* Add spacing between header and content */
   display: block; /* Ensure the question content is displayed as a block */
