@@ -31,12 +31,13 @@ function showCard(index) {
   const answerHeader = document.getElementById('answer-header');
   const answerContent = document.getElementById('answer-content');
 
-  questionContent.textContent = card.question;
-  answerContent.innerHTML = `<p>${card.question}</p><hr><p>${card.answer}</p>`;
+  questionContent.innerHTML = `<p>${card.question}</p>`;
+  answerContent.innerHTML = `<p>${card.answer}</p>`;
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
 }
+
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
