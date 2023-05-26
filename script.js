@@ -9,23 +9,29 @@ function parseCSV(csv) {
 
   for (let i = 1; i < lines.length; i++) {
     const values = [];
-    let current = '';
-    let withinQuotes = false;
+    let currentIndex = 0;
+    let inQuotes = false;
+    let currentChar = '';
+    let currentValue = '';
 
-    for (let j = 0; j < lines[i].length; j++) {
-      const char = lines[i][j];
+    while (currentIndex < lines[i].length) {
+      currentChar = lines[i][currentIndex];
 
-      if (char === '"') {
-        withinQuotes = !withinQuotes;
-      } else if (char === ',' && !withinQuotes) {
-        values.push(current.trim());
-        current = '';
+      if (currentChar === '"' && !inQuotes) {
+        inQuotes = true;
+      } else if (currentChar === '"' && inQuotes) {
+        inQuotes = false;
+      } else if (currentChar === ',' && !inQuotes) {
+        values.push(currentValue.trim());
+        currentValue = '';
       } else {
-        current += char;
+        currentValue += currentChar;
       }
+
+      currentIndex++;
     }
 
-    values.push(current.trim());
+    values.push(currentValue.trim());
 
     const card = {};
     for (let j = 0; j < headers.length; j++) {
@@ -37,6 +43,7 @@ function parseCSV(csv) {
 
   return cardData;
 }
+
 
 
 
