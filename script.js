@@ -34,12 +34,13 @@ function showCard(index) {
   const answerHeader = document.getElementById('answer-header');
   const answerContent = document.getElementById('answer-content');
 
-  questionContent.textContent = card.question; // Use textContent instead of innerHTML
-  answerContent.innerHTML = `<p>${card.answer}</p>`;
+  questionContent.textContent = card.question;
+  answerContent.textContent = card.answer;
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
 }
+
 
 
 
