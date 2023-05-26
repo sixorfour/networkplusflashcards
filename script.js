@@ -25,6 +25,10 @@ function parseCSV(csv) {
 }
 
 function showCard(index) {
+  if (cardData.length === 0) {
+    console.warn('No flashcards available.');
+    return;
+  }
   const card = cardData[index];
   const questionHeader = document.getElementById('question-header');
   const answerHeader = document.getElementById('answer-header');
@@ -49,9 +53,15 @@ function nextCard() {
 }
 
 function extCSV(csvData) {
-  cardData = parseCSV(csvData);
-  showCard(currentCardIndex);
+  try {
+    cardData = parseCSV(csvData);
+    currentCardIndex = 0;
+    showCard(currentCardIndex);
+  } catch (error) {
+    console.error('Error parsing CSV:', error);
+  }
 }
+
 
 document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
