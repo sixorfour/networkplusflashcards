@@ -31,8 +31,8 @@ function showCard(index) {
   const answerHeader = document.getElementById('answer-header');
   const answerContent = document.getElementById('answer-content');
 
-  questionContent.innerHTML = `<p>${card.question}</p>;
-  answerContent.innerHTML = `<p>${card.answer}</p>`;
+  questionContent.textContent = card.question;
+  answerContent.innerHTML = `<p>${card.question}</p><hr><p>${card.answer}</p>`;
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
