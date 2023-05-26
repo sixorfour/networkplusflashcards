@@ -35,7 +35,7 @@ function showCard(index) {
   answerContent.innerHTML = `<p>${card.question}</p><hr><p>${card.answer}</p>`;
 
   questionHeader.textContent = 'Question';
-  answerHeader.textContent = 'Answer';
+  answerHeader.textContent = 'Question';
 }
 
 
