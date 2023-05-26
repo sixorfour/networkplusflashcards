@@ -84,8 +84,11 @@ body {
 }
 
 #answer-wrapper {
-  margin-top: 150px; /* Add margin above the horizontal line break */
-  padding-top: 200px; /* Add padding to create space below the question content */
- 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-top: 1px solid #ccc; /* Add a horizontal line break */
 }
 
