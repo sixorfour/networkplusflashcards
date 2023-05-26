@@ -28,23 +28,18 @@ function showCard(index) {
   const card = cardData[index];
   const questionHeader = document.getElementById('question-header');
   const questionContent = document.getElementById('question-content');
-  const <h2>Question</h2>
-            <p id="question-content" class="hidden"></p>Header = document.getElementById('answer-header');
+  const answerHeader = document.getElementById('answer-header');
   const answerContent = document.getElementById('answer-content');
 
-  questionContent.textContent = card.question;
-  answerContent.innerHTML = `<p>${card.question}</p><hr><p>${card.answer}</p>`;
+  questionContent.innerHTML = `<h2>Question</h2><p>${card.question}</p>`;
+  answerContent.innerHTML = `<h2>Answer</h2><p>${card.answer}</p>`;
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
 }
 
-
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
-  const questionContent = document.getElementById('question-content');
-  const answerContent = document.getElementById('answer-content');
-
   cardContainer.classList.toggle('flip');
 }
 
@@ -59,7 +54,6 @@ function nextCard() {
     showCard(currentCardIndex);
   }
 }
-
 
 document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
