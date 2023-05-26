@@ -31,12 +31,20 @@ function showCard(index) {
   const questionContent = document.getElementById('question-content');
   const answerContent = document.getElementById('answer-content');
 
-  questionContent.textContent = card.question;
-  answerContent.textContent = card.answer; // Display the answer content
+  if (card) {
+    questionHeader.textContent = 'Question';
+    answerHeader.textContent = 'Answer';
 
-  questionHeader.textContent = 'Question';
-  answerHeader.textContent = 'Answer';
+    questionContent.textContent = card['Question'];
+    answerContent.textContent = card['Answer'];
+  } else {
+    questionHeader.textContent = 'No card available';
+    answerHeader.textContent = 'No card available';
+    questionContent.textContent = '';
+    answerContent.textContent = '';
+  }
 }
+
 
 
 
