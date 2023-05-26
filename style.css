@@ -46,15 +46,10 @@ body {
   top: 0;
   left: 0;
   backface-visibility: hidden;
-}
-
-.card-front {
-  z-index: 2;
-  transform: rotateY(0);
+  padding: 20px; /* Add padding to create spacing within the cards */
 }
 
 .card-back {
-  z-index: 2;
   transform: rotateY(-180deg);
   overflow: auto; /* Allow content to scroll within card */
 }
@@ -63,6 +58,16 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  position: relative;
-  z-index: 3; /* Add this line */
+}
+
+/* Additional styles for question and answer headers */
+#question-header,
+#answer-header {
+  margin-bottom: 10px; /* Add spacing between header and content */
+}
+
+/* Additional styles for question and answer content */
+#question-content,
+#answer-content {
+  margin-top: 10px; /* Add spacing between header and content */
 }
