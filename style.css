@@ -36,7 +36,7 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
-/*  display: flex; */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
