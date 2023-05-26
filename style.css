@@ -46,7 +46,9 @@ body {
   top: 0;
   left: 0;
   backface-visibility: hidden;
-  padding: 20px; /* Add padding to create spacing within the cards */
+  
+  
+  padding: 0px; /* Add padding to create spacing within the cards */
 }
 
 .card-back {
