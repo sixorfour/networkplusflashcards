@@ -26,17 +26,13 @@ function parseCSV(csv) {
 
 function showCard(index) {
   const card = cardData[index];
-  const questionHeader = document.getElementById('question-header');
   const questionContent = document.getElementById('question-content');
-  const answerHeader = document.getElementById('answer-header');
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.innerHTML = `<p>${card.question}</p><hr><p>${card.answer}</p>`;
-
-  questionHeader.textContent = 'Question';
-  answerHeader.textContent = 'Answer';
+  answerContent.textContent = card.answer;
 }
+
 
 
 function flipCard() {
