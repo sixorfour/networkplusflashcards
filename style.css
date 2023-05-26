@@ -86,8 +86,7 @@ body {
 #answer-wrapper {
   
   align-items: center;
-  justify-content: center;
   height: 100%;
-  border-top: 1px solid #ccc; /* Add a horizontal line break */
+  
 }
 
