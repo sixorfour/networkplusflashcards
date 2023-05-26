@@ -62,3 +62,14 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
   };
   reader.readAsText(csvfile);
 });
+
+function extCSV(csvData) {
+  try {
+    cardData = parseCSV(csvData);
+    currentCardIndex = 0;
+    showCard(currentCardIndex);
+    console.log(cardData); // Log cardData to the console
+  } catch (error) {
+    console.error('Error parsing CSV:', error);
+  }
+}
