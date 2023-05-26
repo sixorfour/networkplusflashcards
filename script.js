@@ -31,22 +31,12 @@ function showCard(index) {
   const questionContent = document.getElementById('question-content');
   const answerContent = document.getElementById('answer-content');
 
-  if (card) {
-    questionHeader.textContent = 'Question';
-    answerHeader.textContent = 'Answer';
+  questionContent.textContent = card.question;
+  answerContent.textContent = card.answer; // Display the answer content
 
-    questionContent.textContent = card['Question'];
-    answerContent.textContent = card['Answer'];
-  } else {
-    questionHeader.textContent = 'No card available';
-    answerHeader.textContent = 'No card available';
-    questionContent.textContent = '';
-    answerContent.textContent = '';
-  }
+  questionHeader.textContent = 'Question';
+  answerHeader.textContent = 'Answer';
 }
-
-
-
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
@@ -59,37 +49,12 @@ function nextCard() {
 }
 
 function extCSV(csvData) {
-  try {
-    cardData = parseCSV(csvData);
-    currentCardIndex = 0;
+  console.log(csvData);
+  (data => {
+    cardData = parseCSV(data);
     showCard(currentCardIndex);
-  } catch (error) {
-    console.error('Error parsing CSV:', error);
-  }
+  })
 }
 
-
-document.getElementById('flip-button').addEventListener('click', flipCard);
+document.getElementById('flip-button').addEventListener('click', () => flipCard());
 document.getElementById('next-button').addEventListener('click', nextCard);
-
-var csvFileInput = document.getElementById('csvFileInput');
-csvFileInput.addEventListener('change', function(event) {
-  var csvfile = event.target.files[0];
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var csvData = e.target.result;
-    extCSV(csvData);
-  };
-  reader.readAsText(csvfile);
-});
-
-document.getElementById('submit-button').addEventListener('click', function() {
-  var csvFileInput = document.getElementById('csvFileInput');
-  var csvfile = csvFileInput.files[0];
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var csvData = e.target.result;
-    extCSV(csvData);
-  };
-  reader.readAsText(csvfile);
-});
