@@ -3,49 +3,10 @@ let currentCardIndex = 0;
 let isAnswerDisplayed = false; // Track the answer display state
 
 function parseCSV(csv) {
-  const lines = csv.split('\n');
-  const headers = lines[0].split(',');
-  cardData = [];
-
-  for (let i = 1; i < lines.length; i++) {
-    const values = [];
-    let currentIndex = 0;
-    let inQuotes = false;
-    let currentChar = '';
-    let currentValue = '';
-
-    while (currentIndex < lines[i].length) {
-      currentChar = lines[i][currentIndex];
-
-      if (currentChar === '"' && !inQuotes) {
-        inQuotes = true;
-      } else if (currentChar === '"' && inQuotes) {
-        inQuotes = false;
-      } else if (currentChar === ',' && !inQuotes) {
-        values.push(currentValue.trim());
-        currentValue = '';
-      } else {
-        currentValue += currentChar;
-      }
-
-      currentIndex++;
-    }
-
-    values.push(currentValue.trim());
-
-    const card = {};
-    for (let j = 0; j < headers.length; j++) {
-      card[headers[j]] = values[j];
-    }
-
-    cardData.push(card);
-  }
-
+  const parsedData = Papa.parse(csv, { header: true });
+  cardData = parsedData.data;
   return cardData;
 }
-
-
-
 
 function showCard(index) {
   const card = cardData[index];
