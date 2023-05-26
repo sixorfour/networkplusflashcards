@@ -36,7 +36,7 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -55,6 +55,24 @@ body {
 .card-back {
   transform: rotateY(-180deg);
   overflow: auto; /* Allow content to scroll within card */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add padding for spacing within the card */
+}
+
+.card-back #question-wrapper {
+  margin-bottom: 20px; /* Add spacing between question content and answer content */
+}
+
+.card-back #answer-wrapper {
+  margin-top: 20px; /* Add spacing between answer content and horizontal line */
+}
+
+.card-back hr {
+  width: 80%; /* Adjust the width of the horizontal line as needed */
+  margin: 10px auto; /* Adjust the margin of the horizontal line as needed */
 }
 
 .button-container {
@@ -73,13 +91,4 @@ body {
 #question-content,
 #answer-content {
   margin-top: 10px; /* Add spacing between header and content */
-}
-
-/* Additional Styles */
-#question-wrapper {
-  display: block;
-}
-
-#answer-wrapper {
-  transform: rotateY(180deg);
 }
