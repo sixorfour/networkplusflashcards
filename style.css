@@ -63,7 +63,12 @@ body {
 }
 
 .card-back #question-wrapper {
+  display: block; /* Remove the default flex behavior */
   margin-bottom: 20px; /* Add spacing between question content and answer content */
+}
+
+.card-back #question-content {
+  display: block; /* Remove the default flex behavior */
 }
 
 .card-back #answer-wrapper {
