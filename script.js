@@ -44,10 +44,13 @@ function nextCard() {
 fetch('flashcards.csv')
   .then(response => response.text())
   .then(data => {
-    cardData = parseCSV(data);
-    showCard(currentCardIndex);
+    cardData = parseCSV(data).then(parsedData => {
+      cardData = parsedData;
+      showCard(currentCardIndex);
+    }).catch(error => console.log('Error parsing CSV:', error));
   })
   .catch(error => console.log('Error fetching CSV:', error));
+
 
 document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
