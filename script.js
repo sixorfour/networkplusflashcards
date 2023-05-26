@@ -29,7 +29,7 @@ function showCard(index) {
   const questionHeader = document.getElementById('question-header');
   const questionContent = document.getElementById('question-content');
   const <h2>Question</h2>
-            <p id="question-content" class="hidden"></p>Header = document.getElementById('question-header');
+            <p id="question-content" class="hidden"></p>Header = document.getElementById('answer-header');
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
