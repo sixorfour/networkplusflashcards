@@ -65,6 +65,8 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
   reader.readAsText(csvfile);
 });
 
+
+/*
 // Add the missing button code
 const flipButton = document.createElement('button');
 flipButton.id = 'flip-button';
@@ -75,3 +77,5 @@ const nextButton = document.createElement('button');
 nextButton.id = 'next-button';
 nextButton.textContent = 'Next';
 document.querySelector('.button-container').appendChild(nextButton);
+
+*/
