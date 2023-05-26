@@ -1,4 +1,4 @@
-body {
+.body {
   font-family: Arial, sans-serif;
   text-align: center;
 }
@@ -49,31 +49,26 @@ body {
 }
 
 .card-back {
-  /*z-index: 2;*/
+  z-index: 2;
   transform: rotateY(-180deg);
-}
-
-.button-container {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 #question-wrapper {
-  margin-bottom: 20px !important; /* Add spacing below the question content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 #answer-wrapper {
-  margin-top: 20px !important; /* Add spacing above the answer content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-
-/* Microsoft Edge specific styles */
-@supports (-ms-ime-align:auto) {
-  #question-header,
-  #answer-header {
-    display: none;
-  }
+#answer-header {
+  margin-top: 20px;
 }
