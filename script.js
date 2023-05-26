@@ -5,7 +5,7 @@ function parseCSV(csv) {
   const lines = csv.split('\n');
   const headers = lines[0].split(',');
 
-  cardData = [];
+  const cardData = [];
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].split(',');
     if (values.length !== headers.length) {
@@ -26,16 +26,16 @@ function parseCSV(csv) {
 
 function showCard(index) {
   const card = cardData[index];
+  const questionHeader = document.getElementById('question-header');
+  const answerHeader = document.getElementById('answer-header');
   const questionContent = document.getElementById('question-content');
   const answerContent = document.getElementById('answer-content');
 
-  if (card) {
-    questionContent.textContent = card.question;
-    answerContent.textContent = card.answer;
-  } else {
-    questionContent.textContent = 'No card available';
-    answerContent.textContent = 'No card available';
-  }
+  questionContent.textContent = card.question;
+  answerContent.textContent = card.answer;
+
+  questionHeader.textContent = 'Question';
+  answerHeader.textContent = 'Answer';
 }
 
 function flipCard() {
