@@ -32,11 +32,12 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.textContent = card.answer;
+  answerContent.innerHTML = `<p>${card.question}</p><hr><p>${card.answer}</p>`;
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
 }
+
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
