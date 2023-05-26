@@ -3,40 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Flashcards</title>
-
-
   <link rel="stylesheet" type="text/css" href="style.css">
-  <style>
-    .file-input-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .file-input-container label {
-      margin-right: 10px;
-    }
-  </style>
 </head>
+<input type="file" id="csvFileInput">
 <body>
   <div class="container">
-    <div class="file-input-container">
-      <label for="csvFileInput">Choose File:</label>
-      <input type="file" id="csvFileInput" title="Upload CSV file">
-    </div>
-
     <div class="card-container">
-      <!-- Rest of the card container code -->
+      <div class="card-inner">
+        <div class="card-front">
+          <h2 id="question-header">Question</h2>
+          <p id="question-content"></p>
+        </div>
+        <div class="card-back">
+          <h2 id="answer-header">Answer</h2>
+          <p id="answer-content"></p>
+        </div>
+      </div>
     </div>
-
     <div class="button-container">
       <button id="flip-button">Flip Card</button>
       <button id="next-button">Next</button>
     </div>
   </div>
-
   <script src="script.js"></script>
-
   
   <script>
     var csvFileInput = document.getElementById('csvFileInput');
