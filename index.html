@@ -7,6 +7,10 @@
 </head>
 <body>
   <div class="container">
+    <div class="file-input-container">
+      <label for="csvFileInput">Choose File:</label>
+      <input type="file" id="csvFileInput" title="Upload CSV file">
+    </div>
     <div class="card-container">
       <div class="card-inner">
         <div class="card-front">
@@ -27,26 +31,39 @@
   <script src="script.js"></script>
   
   <script>
-    var csvFileInput = document.getElementById('csvFileInput');
-    csvFileInput.addEventListener('change', function(event) {
-      var csvfile = event.target.files[0];
-      var reader = new FileReader();
+    let cardData = [];
+    let currentCardIndex = 0;
+
+    function parseCSV(csv) {
+      // CSV parsing logic
+    }
+
+    function showCard(index) {
+      // Show card logic
+    }
+
+    function flipCard() {
+      // Flip card logic
+    }
+
+    function nextCard() {
+      // Next card logic
+    }
+
+    document.getElementById('flip-button').addEventListener('click', flipCard);
+    document.getElementById('next-button').addEventListener('click', nextCard);
+
+    document.getElementById('csvFileInput').addEventListener('change', function(event) {
+      const csvfile = event.target.files[0];
+      const reader = new FileReader();
       reader.onload = function(e) {
-        var csvData = e.target.result;
-        console.log(csvData);
+        const csvData = e.target.result;
+        cardData = parseCSV(csvData);
+        currentCardIndex = 0;
+        showCard(currentCardIndex);
       };
       reader.readAsText(csvfile);
-	  var csvData = (csvfile);
-	  extCSV(csvData);
-  	var csvPromise = new Promise(function(resolve, reject) {
-        var csvData = (csvfile);
-        resolve(csvData);
-      });
-      csvPromise.then(function(csvData) {
-        extCSV(csvData);
-      });
-	 });
+    });
   </script>
-  
 </body>
 </html>
