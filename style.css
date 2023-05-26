@@ -59,6 +59,11 @@ body {
   margin-top: 20px;
 }
 
+#answer-content {
+  margin-top: 10px;
+}
+
+
 /* Microsoft Edge specific styles */
 @supports (-ms-ime-align:auto) {
   #question-header,
