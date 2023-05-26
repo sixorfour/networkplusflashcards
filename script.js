@@ -27,9 +27,9 @@ function parseCSV(csv) {
 function showCard(index) {
   const card = cardData[index];
   const questionHeader = document.getElementById('question-header');
-  const questionContent = document.getElementById('question-content');
-  const answerHeader = document.getElementById('answer-header');
-  const answerContent = document.getElementById('answer-content');
+const questionContent = document.getElementById('question-content');
+const answerHeader = document.getElementById('answer-header');
+const answerContent = document.getElementById('answer-content');
 
   questionContent.innerHTML = `<h2>Question</h2><p>${card.question}</p>`;
   answerContent.innerHTML = `<h2>Answer</h2><p>${card.answer}</p>`;
