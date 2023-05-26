@@ -44,11 +44,16 @@ function flipCard() {
 }
 
 function nextCard() {
-  currentCardIndex = (currentCardIndex + 1) % cardData.length;
-  showCard(currentCardIndex);
-}
+  const cardContainer = document.querySelector('.card-container');
+  const isFlipped = cardContainer.classList.contains('flip');
 
-document.getElementById('next-button').addEventListener('click', nextCard);
+  if (isFlipped) {
+    cardContainer.classList.remove('flip'); // Reverse the flip to show the question side
+  } else {
+    currentCardIndex = (currentCardIndex + 1) % cardData.length;
+    showCard(currentCardIndex);
+  }
+}
 
 
 document.getElementById('flip-button').addEventListener('click', flipCard);
