@@ -4,26 +4,21 @@ let isAnswerDisplayed = false; // Track the answer display state
 
 function parseCSV(csv) {
   const lines = csv.split('\n');
-  const headers = lines[0].split(',');
-
   const cardData = [];
-  for (let i = 1; i < lines.length; i++) {
-    const values = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
-    if (values.length !== headers.length) {
-      continue; // Skip invalid rows with mismatched values
-    }
-    const card = {};
 
-    for (let j = 0; j < headers.length; j++) {
-      const value = values[j].replace(/(^"|"$)/g, ''); // Remove leading/trailing double quotes if present
-      card[headers[j]] = value;
-    }
+  for (let i = 1; i < lines.length; i++) {
+    const values = lines[i].split(',');
+    const card = {
+      question: values[0],
+      answer: values[1]
+    };
 
     cardData.push(card);
   }
 
   return cardData;
 }
+
 
 
 function showCard(index) {
