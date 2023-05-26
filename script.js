@@ -25,10 +25,6 @@ function parseCSV(csv) {
 }
 
 function showCard(index) {
-  if (cardData.length === 0) {
-    console.warn('No flashcards available.');
-    return;
-  }
   const card = cardData[index];
   const questionHeader = document.getElementById('question-header');
   const answerHeader = document.getElementById('answer-header');
@@ -36,11 +32,12 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
-  answerContent.textContent = card.answer;
+  answerContent.textContent = card.answer; // Display the answer content
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
 }
+
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
