@@ -58,3 +58,11 @@ body {
   justify-content: center;
   margin-top: 20px;
 }
+
+/* Microsoft Edge specific styles */
+@supports (-ms-ime-align:auto) {
+  #question-header,
+  #answer-header {
+    display: none;
+  }
+}
