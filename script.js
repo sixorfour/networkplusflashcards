@@ -39,6 +39,7 @@ function showCard(index) {
 }
 
 
+
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
   cardContainer.classList.toggle('flip');
