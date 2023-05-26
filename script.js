@@ -44,8 +44,6 @@ function flipCard() {
   const answerContent = document.getElementById('answer-content');
 
   cardContainer.classList.toggle('flip');
-  questionContent.classList.toggle('hidden');
-  answerContent.classList.toggle('hidden');
 }
 
 function nextCard() {
