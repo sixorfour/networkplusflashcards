@@ -48,6 +48,9 @@ function nextCard() {
   showCard(currentCardIndex);
 }
 
+document.getElementById('next-button').addEventListener('click', nextCard);
+
+
 document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
 
