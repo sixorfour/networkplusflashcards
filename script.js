@@ -40,7 +40,12 @@ function showCard(index) {
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
+  const questionContent = document.getElementById('question-content');
+  const answerContent = document.getElementById('answer-content');
+
   cardContainer.classList.toggle('flip');
+  questionContent.classList.toggle('hidden');
+  answerContent.classList.toggle('hidden');
 }
 
 function nextCard() {
