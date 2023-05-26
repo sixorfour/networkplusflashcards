@@ -4,20 +4,23 @@ let isAnswerDisplayed = false; // Track the answer display state
 
 function parseCSV(csv) {
   const lines = csv.split('\n');
+  const headers = lines[0].split(',');
   const cardData = [];
 
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].split(',');
-    const card = {
-      question: values[0],
-      answer: values[1]
-    };
+    const card = {};
+
+    for (let j = 0; j < headers.length; j++) {
+      card[headers[j]] = values[j];
+    }
 
     cardData.push(card);
   }
 
   return cardData;
 }
+
 
 
 
