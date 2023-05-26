@@ -5,7 +5,7 @@ function parseCSV(csv) {
   const lines = csv.split('\n');
   const headers = lines[0].split(',');
 
-  const cardData = [];
+  cardData = [];
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].split(',');
     if (values.length !== headers.length) {
@@ -23,6 +23,9 @@ function parseCSV(csv) {
 
   return cardData;
 }
+
+// Rest of the code...
+
 
 function showCard(index) {
   const card = cardData[index];
