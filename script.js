@@ -31,14 +31,12 @@ function showCard(index) {
   const answerHeader = document.getElementById('answer-header');
   const answerContent = document.getElementById('answer-content');
 
-  questionHeader.textContent = 'Question';
   questionContent.textContent = card.question;
+  answerContent.innerHTML = `<p>${card.question}</p><hr><p>${card.answer}</p>`;
+
+  questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
-  answerContent.textContent = card.answer;
 }
-
-
-
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
@@ -51,7 +49,6 @@ function nextCard() {
   currentCardIndex = (currentCardIndex + 1) % cardData.length;
   showCard(currentCardIndex);
 }
-
 
 document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
@@ -67,14 +64,3 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
   };
   reader.readAsText(csvfile);
 });
-
-function extCSV(csvData) {
-  try {
-    cardData = parseCSV(csvData);
-    currentCardIndex = 0;
-    showCard(currentCardIndex);
-    console.log(cardData); // Log cardData to the console
-  } catch (error) {
-    console.error('Error parsing CSV:', error);
-  }
-}
