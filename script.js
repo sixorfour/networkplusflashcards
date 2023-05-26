@@ -50,3 +50,15 @@ function nextCard() {
 
 document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
+
+document.getElementById('csvFileInput').addEventListener('change', function(event) {
+  const csvfile = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const csvData = e.target.result;
+    cardData = parseCSV(csvData);
+    currentCardIndex = 0;
+    showCard(currentCardIndex);
+  };
+  reader.readAsText(csvfile);
+});
