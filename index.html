@@ -5,6 +5,7 @@
   <title>Flashcards</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<input type="file" id="csvFileInput">
 <body>
   <div class="container">
     <div class="card-container">
@@ -24,7 +25,29 @@
       <button id="next-button">Next</button>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.0/papaparse.min.js"></script>
   <script src="script.js"></script>
+  
+  <script>
+    var csvFileInput = document.getElementById('csvFileInput');
+    csvFileInput.addEventListener('change', function(event) {
+      var csvfile = event.target.files[0];
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var csvData = e.target.result;
+        console.log(csvData);
+      };
+      reader.readAsText(csvfile);
+	  var csvData = (csvfile);
+	  extCSV(csvData);
+  	var csvPromise = new Promise(function(resolve, reject) {
+        var csvData = (csvfile);
+        resolve(csvData);
+      });
+      csvPromise.then(function(csvData) {
+        extCSV(csvData);
+      });
+	 });
+  </script>
+  
 </body>
 </html>
