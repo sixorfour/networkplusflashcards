@@ -36,11 +36,10 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
-
 
 .card-front,
 .card-back {
@@ -50,8 +49,6 @@ body {
   top: 0;
   left: 0;
   backface-visibility: hidden;
-  
-  
   padding: 0px; /* Add padding to create spacing within the cards */
 }
 
@@ -76,4 +73,13 @@ body {
 #question-content,
 #answer-content {
   margin-top: 10px; /* Add spacing between header and content */
+}
+
+/* Additional Styles */
+#question-wrapper {
+  
+}
+
+#answer-wrapper {
+  
 }
