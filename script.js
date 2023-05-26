@@ -5,14 +5,18 @@ let isAnswerDisplayed = false; // Track the answer display state
 function parseCSV(csv) {
   const lines = csv.split('\n');
   const headers = lines[0].split(',');
-  cardData = [];
 
+  const cardData = [];
   for (let i = 1; i < lines.length; i++) {
-    const values = lines[i].split(',');
+    const values = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+    if (values.length !== headers.length) {
+      continue; // Skip invalid rows with mismatched values
+    }
     const card = {};
 
     for (let j = 0; j < headers.length; j++) {
-      card[headers[j]] = values[j];
+      const value = values[j].replace(/(^"|"$)/g, ''); // Remove leading/trailing double quotes if present
+      card[headers[j]] = value;
     }
 
     cardData.push(card);
@@ -20,6 +24,7 @@ function parseCSV(csv) {
 
   return cardData;
 }
+
 
 function showCard(index) {
   const card = cardData[index];
