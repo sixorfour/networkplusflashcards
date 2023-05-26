@@ -5,7 +5,7 @@ function parseCSV(csv) {
   const lines = csv.split('\n');
   const headers = lines[0].split(',');
 
-  cardData = [];
+  const cardData = [];
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].split(',');
     if (values.length !== headers.length) {
@@ -24,9 +24,6 @@ function parseCSV(csv) {
   return cardData;
 }
 
-// Rest of the code...
-
-
 function showCard(index) {
   const card = cardData[index];
   const questionHeader = document.getElementById('question-header');
@@ -34,15 +31,12 @@ function showCard(index) {
   const answerHeader = document.getElementById('answer-header');
   const answerContent = document.getElementById('answer-content');
 
-  questionContent.textContent = card.question;
-  answerContent.textContent = card.answer;
+  questionContent.innerHTML = `<p>${card.question}</p>`;
+  answerContent.innerHTML = `<p>${card.answer}</p>`;
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
 }
-
-
-
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
@@ -71,8 +65,6 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
   reader.readAsText(csvfile);
 });
 
-
-/*
 // Add the missing button code
 const flipButton = document.createElement('button');
 flipButton.id = 'flip-button';
@@ -83,5 +75,3 @@ const nextButton = document.createElement('button');
 nextButton.id = 'next-button';
 nextButton.textContent = 'Next';
 document.querySelector('.button-container').appendChild(nextButton);
-
-*/
