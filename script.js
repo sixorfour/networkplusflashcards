@@ -28,14 +28,15 @@ function showCard(index) {
   const card = cardData[index];
   const questionHeader = document.getElementById('question-header');
   const questionContent = document.getElementById('question-content');
-  const answerHeader = document.getElementById('answer-header');
+  const <h2>Question</h2>
+            <p id="question-content" class="hidden"></p>Header = document.getElementById('question-header');
   const answerContent = document.getElementById('answer-content');
 
   questionContent.textContent = card.question;
   answerContent.innerHTML = `<p>${card.question}</p><hr><p>${card.answer}</p>`;
 
   questionHeader.textContent = 'Question';
-  answerHeader.textContent = 'Question';
+  answerHeader.textContent = 'Answer';
 }
 
 
