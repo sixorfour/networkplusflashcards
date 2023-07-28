@@ -7,15 +7,19 @@ function parseCSV(csv) {
 
   const cardData = [];
   for (let i = 1; i < lines.length; i++) {
-    const values = lines[i].match(/(?:,|\n|^)("(?:(?:"")*[^"]*)*"|[^",\n]*|(?:\n|$))/g);
+    const values = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
     if (!values || values.length !== headers.length) {
       continue; // Skip invalid rows with mismatched values
     }
     const card = {};
 
     for (let j = 0; j < headers.length; j++) {
-      const value = values[j].trim();
-      card[headers[j]] = value.startsWith('"') ? value.slice(1, value.length - 1) : value;
+      let value = values[j].trim();
+      // If value is enclosed in double quotes, remove them
+      if (value.startsWith('"') && value.endsWith('"')) {
+        value = value.substring(1, value.length - 1);
+      }
+      card[headers[j]] = value;
     }
 
     cardData.push(card);
@@ -23,6 +27,7 @@ function parseCSV(csv) {
 
   return cardData;
 }
+
 
 function showCard(index) {
   const card = cardData[index];
