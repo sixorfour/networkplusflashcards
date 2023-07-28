@@ -7,15 +7,15 @@ function parseCSV(csv) {
 
   const cardData = [];
   for (let i = 1; i < lines.length; i++) {
-    const values = lines[i].split(',');
-    if (values.length !== headers.length) {
+    const values = lines[i].match(/(?:,|\n|^)("(?:(?:"")*[^"]*)*"|[^",\n]*|(?:\n|$))/g);
+    if (!values || values.length !== headers.length) {
       continue; // Skip invalid rows with mismatched values
     }
     const card = {};
 
     for (let j = 0; j < headers.length; j++) {
       const value = values[j].trim();
-      card[headers[j]] = value;
+      card[headers[j]] = value.startsWith('"') ? value.slice(1, value.length - 1) : value;
     }
 
     cardData.push(card);
@@ -64,17 +64,3 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
   };
   reader.readAsText(csvfile);
 });
-
-// Add the missing button code
-
-/*
-const flipButton = document.createElement('button');
-flipButton.id = 'flip-button';
-flipButton.textContent = 'Flip Card';
-document.querySelector('.button-container').appendChild(flipButton);
-
-const nextButton = document.createElement('button');
-nextButton.id = 'next-button';
-nextButton.textContent = 'Next';
-document.querySelector('.button-container').appendChild(nextButton);
-*/
