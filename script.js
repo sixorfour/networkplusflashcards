@@ -1,5 +1,23 @@
 let cardData = [];
+let shuffledIndices = []; // Array to store randomized indices
 let currentCardIndex = 0;
+let cardsShown = 0;
+
+function shuffleArray(array) {
+  // Fisher-Yates (aka Knuth) Shuffle
+  let currentIndex = array.length, temporaryValue, randomIndex;
+
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 function parseCSV(csv) {
   const lines = csv.split('\n');
@@ -40,6 +58,12 @@ function showCard(index) {
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
+  updateProgress();
+}
+
+function updateProgress() {
+  const progress = document.getElementById('progress');
+  progress.textContent = `${cardsShown + 1}/${shuffledIndices.length} cards`;
 }
 
 function flipCard() {
@@ -50,8 +74,13 @@ function flipCard() {
 function nextCard() {
   const cardContainer = document.querySelector('.card-container');
   cardContainer.classList.remove('flip');
-  currentCardIndex = (currentCardIndex + 1) % cardData.length;
-  showCard(currentCardIndex);
+  cardsShown += 1;
+  if (cardsShown < shuffledIndices.length) {
+    currentCardIndex = shuffledIndices[cardsShown];
+    showCard(currentCardIndex);
+  } else {
+    alert("Complete!");
+  }
 }
 
 document.getElementById('flip-button').addEventListener('click', flipCard);
@@ -63,7 +92,9 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
   reader.onload = function(e) {
     const csvData = e.target.result;
     cardData = parseCSV(csvData);
-    currentCardIndex = 0;
+    shuffledIndices = shuffleArray([...Array(cardData.length).keys()]); // Create and shuffle an array of indices
+    currentCardIndex = shuffledIndices[0];
+    cardsShown = 0;
     showCard(currentCardIndex);
   };
   reader.readAsText(csvfile);
