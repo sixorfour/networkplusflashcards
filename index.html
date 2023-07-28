@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h3>V 4.9 -- Upload a simple csv with a question and answer header. put question and answer information into CSV document accordingly. upload CSV for flashcard functionality. you can use <a href="https://sixorfour.github.io/networkplusflashcards/flashcards.csv">this example file</a> for reference.</h3>
+  <h3>V 111 -- Upload a simple csv with a question and answer header. put question and answer information into CSV document accordingly. upload CSV for flashcard functionality. you can use <a href="https://sixorfour.github.io/networkplusflashcards/flashcards.csv">this example file</a> for reference.</h3>
   <div class="container">
     <div class="file-input-container">
       <label for="csvFileInput">Choose File:</label>
@@ -19,23 +19,23 @@
           <p id="question-content"></p>
         </div>
         <div class="card-back">
-  <div id="question-wrapper">
-    <h2 id="question-header">Question</h2>
-    <p id="question-content"></p>
-  </div>
-  <div id="answer-wrapper">
-    <hr>
-    <h2 id="answer-header">Answer</h2>
-    <p id="answer-content"></p>
-  </div>
-</div>
-
+          <div id="question-wrapper">
+            <h2 id="question-header">Question</h2>
+            <p id="question-content"></p>
+          </div>
+          <div id="answer-wrapper">
+            <hr>
+            <h2 id="answer-header">Answer</h2>
+            <p id="answer-content"></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="button-container">
       <button id="flip-button">Flip Card</button>
       <button id="next-button">Next</button>
     </div>
+    <div id="progress"></div> <!-- This is the new div for displaying the progress -->
   </div>
   <script src="script.js"></script>
 </body>
