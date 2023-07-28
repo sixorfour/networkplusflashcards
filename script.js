@@ -3,7 +3,7 @@ let currentCardIndex = 0;
 
 function parseCSV(csv) {
   const lines = csv.split('\n');
-  const headers = lines[0].split(',');
+  const headers = lines[0].split(',').map(header => header.toLowerCase().trim());
 
   const cardData = [];
   for (let i = 1; i < lines.length; i++) {
@@ -28,7 +28,6 @@ function parseCSV(csv) {
   return cardData;
 }
 
-
 function showCard(index) {
   const card = cardData[index];
   const questionHeader = document.getElementById('question-header');
@@ -36,8 +35,8 @@ function showCard(index) {
   const answerHeader = document.getElementById('answer-header');
   const answerContent = document.getElementById('answer-content');
 
-  questionContent.innerHTML = `<p>${card.question}</p>`;
-  answerContent.innerHTML = `<p>${card.answer}</p>`;
+  questionContent.innerHTML = `<p>${card['question']}</p>`;
+  answerContent.innerHTML = `<p>${card['answer']}</p>`;
 
   questionHeader.textContent = 'Question';
   answerHeader.textContent = 'Answer';
