@@ -48,18 +48,24 @@ function parseCSV(csv) {
 
 function showCard(index) {
   const card = cardData[index];
-  const questionHeader = document.getElementById('question-header');
-  const questionContent = document.getElementById('question-content');
+  const questionHeaderFront = document.getElementById('question-header-front');
+  const questionContentFront = document.getElementById('question-content-front');
+  const questionHeaderBack = document.getElementById('question-header-back');
+  const questionContentBack = document.getElementById('question-content-back');
   const answerHeader = document.getElementById('answer-header');
   const answerContent = document.getElementById('answer-content');
 
-  questionContent.innerHTML = `<p>${card['question']}</p>`;
+  questionContentFront.innerHTML = `<p>${card['question']}</p>`;
+  questionContentBack.innerHTML = `<p>${card['question']}</p>`; // Added this line to display question content on the back
   answerContent.innerHTML = `<p>${card['answer']}</p>`;
 
-  questionHeader.textContent = 'Question';
+  questionHeaderFront.textContent = 'Question';
+  questionHeaderBack.textContent = 'Question'; // Make sure this says 'Question' as well
   answerHeader.textContent = 'Answer';
-  updateProgress();
+
+  document.getElementById('progress').textContent = `${index + 1}/${cardData.length} cards`;
 }
+
 
 function updateProgress() {
   const progress = document.getElementById('progress');
