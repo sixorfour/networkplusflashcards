@@ -70,7 +70,7 @@ function showCard(index) {
 
   // Update visibility of "Last" button
   const lastButton = document.getElementById('last-button');
-  lastButton.style.display = (cardsShown > 1) ? 'inline-block' : 'none';  // Changed this line
+  lastButton.style.display = (cardsShown > 0) ? 'inline-block' : 'none';
 }
 
 function flipCard() {
@@ -79,11 +79,13 @@ function flipCard() {
 }
 
 function lastCard() { // Add this function to handle the "Last" button
-  const cardContainer = document.querySelector('.card-container');
-  cardContainer.classList.remove('flip');
-  cardsShown -= 1;
-  currentCardIndex = shuffledIndices[cardsShown];
-  showCard(currentCardIndex);
+  if (cardsShown > 0) {
+    const cardContainer = document.querySelector('.card-container');
+    cardContainer.classList.remove('flip');
+    cardsShown -= 1;
+    currentCardIndex = shuffledIndices[cardsShown];
+    showCard(currentCardIndex);
+  }
 }
 
 function nextCard() {
