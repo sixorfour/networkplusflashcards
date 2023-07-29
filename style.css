@@ -109,3 +109,12 @@ body {
 #csvFileInput {
   vertical-align: middle;
 }
+
+#file-input-container {
+  width: 100px;
+  overflow: hidden;
+}
+
+#csvFileInput {
+  width: 100%;
+}
