@@ -15,8 +15,8 @@ body {
 }
 
 .card-container {
-  width: 500px;
-  height: 300px;
+  width: 70%;  /* increased size */
+  height: 600px; /* Set a specific height */
   background-color: #f1f1f1;
   margin: 20px auto;
   border: 1px solid #ccc;
