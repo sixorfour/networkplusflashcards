@@ -15,8 +15,8 @@ body {
 }
 
 .card-container {
-  width: 500px;
-  height: 300px;
+  width: 70%;  /* increased size */
+  height: 70%; /* increased size */
   background-color: #f1f1f1;
   margin: 20px auto;
   border: 1px solid #ccc;
@@ -95,5 +95,3 @@ body {
   font-size: 20px;
   color: #333;
 }
-
-
