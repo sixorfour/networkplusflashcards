@@ -56,174 +56,77 @@ question,answer
 "How can you secure data in the cloud, and what are some cloud security best practices?","Securing data in the cloud involves using encryption, strong authentication, access controls, and regular data backups. Cloud security best practices include monitoring access logs, implementing multi-factor authentication, using encrypted connections, keeping software and systems up to date, and conducting regular security audits."
 "What are some popular cloud service providers, and what services do they offer?","Popular cloud service providers include Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), IBM Cloud, and Oracle Cloud. These providers offer a wide range of cloud services, including computing resources, storage solutions, databases, machine learning, and IoT services."
 "How does serverless computing differ from traditional server-based models?","In traditional server-based models, developers manage and maintain servers to run applications. In serverless computing, developers write and deploy code without worrying about the underlying infrastructure. The cloud provider manages the servers, automatically scaling and allocating resources as needed, allowing developers to focus on code functionality."
-"LAN","Local Area Network"
-"WAN","Wide Area Network"
-"MAN","Metropolitan Area Network"
-"VPN","Virtual Private Network"
-"WLAN","Wireless Local Area Network"
-"TCP","Transmission Control Protocol"
-"UDP","User Datagram Protocol"
-"IP","Internet Protocol"
-"DNS","Domain Name System"
-"DHCP","Dynamic Host Configuration Protocol"
-"NAT","Network Address Translation"
-"FTP","File Transfer Protocol"
-"HTTP","Hypertext Transfer Protocol"
-"HTTPS","Hypertext Transfer Protocol Secure"
-"SMTP","Simple Mail Transfer Protocol"
-"POP3","Post Office Protocol version 3"
-"IMAP","Internet Message Access Protocol"
-"ICMP","Internet Control Message Protocol"
-"SNMP","Simple Network Management Protocol"
-"QoS","Quality of Service"
-"DoS","Denial of Service"
-"MitM","Man-in-the-Middle"
-"IDS","Intrusion Detection System"
-"IPS","Intrusion Prevention System"
-"VLAN","Virtual Local Area Network"
-"CDN","Content Delivery Network"
-"IaaS","Infrastructure as a Service"
-"PaaS","Platform as a Service"
-"SaaS","Software as a Service"
-"AWS","Amazon Web Services"
-"Azure","Microsoft Azure"
-"GCP","Google Cloud Platform"
-"IoT","Internet of Things"
-"CDN","Content Delivery Network"
-"SSL/TLS","Secure Sockets Layer/Transport Layer Security"
-"NAC","Network Access Control"
-"SDN","Software-Defined Networking"
-"VoIP","Voice over Internet Protocol"
-"BYOD","Bring Your Own Device"
-"RTO","Recovery Time Objective"
-"RPO","Recovery Point Objective"
-"SLA","Service Level Agreement"
-"BGP","Border Gateway Protocol"
-"OSPF","Open Shortest Path First"
-"RIP","Routing Information Protocol"
-"20 / 21","FTP (File Transfer Protocol)"
-"22","SSH (Secure Shell)"
-"23","Telnet (unencrypted text communication)"
-"25","SMTP (Simple Mail Transfer Protocol)"
-"53","DNS (Domain Name System)"
-"80","HTTP (Hypertext Transfer Protocol)"
-"443","HTTPS (HTTP Secure)"
-"67 / 68","DHCP (Dynamic Host Configuration Protocol)"
-"110","POP3 (Post Office Protocol version 3)"
-"143","IMAP (Internet Message Access Protocol)"
-"161 / 162","SNMP (Simple Network Management Protocol)"
-"389","LDAP (Lightweight Directory Access Protocol)"
-"443","LDAPS (LDAP Secure)"
-"636","LDAPS (LDAP Secure) Alternate"
-"3389","RDP (Remote Desktop Protocol)"
-"53","DNS (Domain Name System)"
-"67 / 68","DHCP (Dynamic Host Configuration Protocol)"
-"69","TFTP (Trivial File Transfer Protocol)"
-"123","NTP (Network Time Protocol)"
-"161 / 162","SNMP (Simple Network Management Protocol)"
-"514","Syslog (used for logging)"
-"636","LDAPS (LDAP Secure)"
-"873","Rsync (Remote Sync)"
-"137 / 138 / 139","NetBIOS (Network Basic Input/Output System)"
-"445","SMB (Server Message Block)"
-"587","SMTP (Submission)"
-"3306","MySQL Database"
-"5432","PostgreSQL Database"
-"1521","Oracle Database"
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
+"What does LAN stand for?","Local Area Network"
+"What does WAN stand for?","Wide Area Network"
+"What does MAN stand for?","Metropolitan Area Network"
+"What does VPN stand for?","Virtual Private Network"
+"What does WLAN stand for?","Wireless Local Area Network"
+"What does TCP stand for?","Transmission Control Protocol"
+"What does UDP stand for?","User Datagram Protocol"
+"What does IP stand for?","Internet Protocol"
+"What does DNS stand for?","Domain Name System"
+"What does DHCP stand for?","Dynamic Host Configuration Protocol"
+"What does NAT stand for?","Network Address Translation"
+"What does FTP stand for?","File Transfer Protocol"
+"What does HTTP stand for?","Hypertext Transfer Protocol"
+"What does HTTPS stand for?","Hypertext Transfer Protocol Secure"
+"What does SMTP stand for?","Simple Mail Transfer Protocol"
+"What does POP3 stand for?","Post Office Protocol version 3"
+"What does IMAP stand for?","Internet Message Access Protocol"
+"What does ICMP stand for?","Internet Control Message Protocol"
+"What does SNMP stand for?","Simple Network Management Protocol"
+"What does QoS stand for?","Quality of Service"
+"What does DoS stand for?","Denial of Service"
+"What does MitM stand for?","Man-in-the-Middle"
+"What does IDS stand for?","Intrusion Detection System"
+"What does IPS stand for?","Intrusion Prevention System"
+"What does VLAN stand for?","Virtual Local Area Network"
+"What does CDN stand for?","Content Delivery Network"
+"What does IaaS stand for?","Infrastructure as a Service"
+"What does PaaS stand for?","Platform as a Service"
+"What does SaaS stand for?","Software as a Service"
+"What does AWS stand for?","Amazon Web Services"
+"What does Azure stand for?","Microsoft Azure"
+"What does GCP stand for?","Google Cloud Platform"
+"What does IoT stand for?","Internet of Things"
+"What does CDN stand for?","Content Delivery Network"
+"What does SSL/TLS stand for?","Secure Sockets Layer/Transport Layer Security"
+"What does NAC stand for?","Network Access Control"
+"What does SDN stand for?","Software-Defined Networking"
+"What does VoIP stand for?","Voice over Internet Protocol"
+"What does BYOD stand for?","Bring Your Own Device"
+"What does RTO stand for?","Recovery Time Objective"
+"What does RPO stand for?","Recovery Point Objective"
+"What does SLA stand for?","Service Level Agreement"
+"What does BGP stand for?","Border Gateway Protocol"
+"What does OSPF stand for?","Open Shortest Path First"
+"What does RIP stand for?","Routing Information Protocol"
+"What protocol/service is port 20 / 21 commonly used for?","FTP (File Transfer Protocol)"
+"What protocol/service is port 22 commonly used for?","SSH (Secure Shell)"
+"What protocol/service is port 23 commonly used for?","Telnet (unencrypted text communication)"
+"What protocol/service is port 25 commonly used for?","SMTP (Simple Mail Transfer Protocol)"
+"What protocol/service is port 53 commonly used for?","DNS (Domain Name System)"
+"What protocol/service is port 80 commonly used for?","HTTP (Hypertext Transfer Protocol)"
+"What protocol/service is port 443 commonly used for?","HTTPS (HTTP Secure)"
+"What protocol/service is port 67 / 68 commonly used for?","DHCP (Dynamic Host Configuration Protocol)"
+"What protocol/service is port 110 commonly used for?","POP3 (Post Office Protocol version 3)"
+"What protocol/service is port 143 commonly used for?","IMAP (Internet Message Access Protocol)"
+"What protocol/service is port 161 / 162 commonly used for?","SNMP (Simple Network Management Protocol)"
+"What protocol/service is port 389 commonly used for?","LDAP (Lightweight Directory Access Protocol)"
+"What protocol/service is port 443 commonly used for?","LDAPS (LDAP Secure)"
+"What protocol/service is port 636 commonly used for?","LDAPS (LDAP Secure) Alternate"
+"What protocol/service is port 3389 commonly used for?","RDP (Remote Desktop Protocol)"
+"What protocol/service is port 53 commonly used for?","DNS (Domain Name System)"
+"What protocol/service is port 67 / 68 commonly used for?","DHCP (Dynamic Host Configuration Protocol)"
+"What protocol/service is port 69 commonly used for?","TFTP (Trivial File Transfer Protocol)"
+"What protocol/service is port 123 commonly used for?","NTP (Network Time Protocol)"
+"What protocol/service is port 161 / 162 commonly used for?","SNMP (Simple Network Management Protocol)"
+"What protocol/service is port 514 commonly used for?","Syslog (used for logging)"
+"What protocol/service is port 636 commonly used for?","LDAPS (LDAP Secure)"
+"What protocol/service is port 873 commonly used for?","Rsync (Remote Sync)"
+"What protocol/service is port 137 / 138 / 139 commonly used for?","NetBIOS (Network Basic Input/Output System)"
+"What protocol/service is port 445 commonly used for?","SMB (Server Message Block)"
+"What protocol/service is port 587 commonly used for?","SMTP (Submission)"
+"What protocol/service is port 3306 commonly used for?","MySQL Database"
+"What protocol/service is port 5432 commonly used for?","PostgreSQL Database"
+"What protocol/service is port 1521 commonly used for?","Oracle Database"
