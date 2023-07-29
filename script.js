@@ -110,7 +110,8 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
     document.getElementById('instructions').style.display = 'none';
     document.getElementById('loadNewButton').style.display = 'block';
     document.getElementById('file-input-container').style.display = 'none';
-    document.getElementById('chooseFileLabel').style.display = 'none';
+    document.querySelector('.card-container').style.display = 'block'; // Add this line
+    document.querySelector('.button-container').style.display = 'flex'; // Add this line
   };
   reader.readAsText(csvfile);
 });
@@ -119,7 +120,8 @@ document.getElementById('loadNewButton').addEventListener('click', function() {
   document.getElementById('instructions').style.display = 'block';
   document.getElementById('loadNewButton').style.display = 'none';
   document.getElementById('file-input-container').style.display = 'block';
-  document.getElementById('chooseFileLabel').style.display = 'block';
+  document.querySelector('.card-container').style.display = 'none'; // Add this line
+  document.querySelector('.button-container').style.display = 'none'; // Add this line
   document.getElementById('csvFileInput').value = null;
   cardData = [];
   shuffledIndices = [];
