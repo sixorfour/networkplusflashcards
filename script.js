@@ -134,4 +134,9 @@ document.getElementById('loadNewButton').addEventListener('click', function() {
   document.getElementById('loadNewButton').style.display = 'none';
   document.getElementById('file-input-container').style.display = 'block';
   document.getElementById('csvFileInput').value = null; // Reset the file input
+  // Reset card-related variables
+  cardData = [];
+  shuffledIndices = [];
+  currentCardIndex = 0;
+  cardsShown = 0;
 });
