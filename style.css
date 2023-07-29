@@ -62,6 +62,11 @@ body {
   margin-top: 20px;
 }
 
+.button-container button {
+  padding: 20px; /* Increase padding to make buttons larger */
+  font-size: 18px; /* Increase font size */
+}
+
 #question-header,
 #answer-header {
   margin-bottom: 10px;
