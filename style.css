@@ -15,8 +15,8 @@ body {
 }
 
 .card-container {
-  width: 500px;
-  height: 300px;
+  width: 70%;
+  height: 600px;
   background-color: #f1f1f1;
   margin: 20px auto;
   border: 1px solid #ccc;
@@ -48,7 +48,7 @@ body {
   top: 0;
   left: 0;
   backface-visibility: hidden;
-  padding: 20px;
+  padding: 0px;
 }
 
 .card-back {
@@ -58,15 +58,8 @@ body {
 
 .button-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 20px;
-  width: 50%; /* Adjust to control space between buttons */
-}
-
-/* Style buttons */
-.button-container button {
-  padding: 15px 30px; /* Adjust to control size of buttons */
-  font-size: 20px; /* Adjust to control text size */
 }
 
 #question-header,
@@ -74,11 +67,7 @@ body {
   margin-bottom: 10px;
 }
 
-#question-content {
-  margin-top: 10px;
-  display: block;
-}
-
+#question-content,
 #answer-content {
   margin-top: 10px;
   display: block;
@@ -90,9 +79,10 @@ body {
   color: #333;
 }
 
-@media (max-width: 600px) {
+/* Media query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
   .card-container {
-    width: 95%;
-    height: 90vh;
+    width: 95%;  /* increase width on smaller screens */
+    height: 90vh;  /* change height to a viewport-height based calculation */
   }
 }
