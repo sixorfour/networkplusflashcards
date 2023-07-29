@@ -57,14 +57,15 @@ body {
 }
 
 .button-container button {
-  padding: 20px;
+  padding: 28px;
   font-size: 18px;
-  margin: 0 10px; 
+  margin: 0 5px; 
 }
 
 #flip-button {
   font-size: 23.4px; /* 30% larger than 18px */
   padding: 26px; /* 30% larger than 20px */
+  font-weight: bold; /* Make the text bold */
 }
 
 #question-header,
