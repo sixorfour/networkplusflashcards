@@ -1,6 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  background-color: #fff;
+  color: #000;
+  margin: 50px auto;
 }
 
 .container {
@@ -20,8 +23,9 @@ body {
   height: 600px;
   background-color: #f1f1f1;
   margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 25px;
   position: relative;
   perspective: 1000px;
   overflow: hidden;
@@ -65,6 +69,7 @@ body {
   padding: 10px;
   font-size: 18px;
   margin: 0 30px; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 #flip-button {
@@ -132,4 +137,49 @@ body {
   text-overflow: ellipsis;
   width: 120px;
   text-align: center;
+}
+
+.theme-selector-container {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  padding: 8px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px; /* Optional: Add border-radius for a rounded appearance */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Add a box shadow for a visual separation */
+  opacity: 0.1;
+  transition: opacity 0.3s ease; /* Add transition for smooth background-color change */
+}
+
+.theme-selector-container:hover {
+  opacity: 1; /* Set the opacity to 100% on hover */
+}
+
+/* Example Theme: Dark Theme */
+.theme-dark {
+  background-color: #333; /* Background color for the body */
+  color: #fff; /* Text color for body */
+}
+.theme-dark #progress {
+  color: #fff; /* Text color for body */
+}
+.theme-dark .card-container {
+  background-color: #404040; /* Background color for the card */
+  color: #fff; /* Text color for card */
+  border: 2px solid #4C4C4C; /* Border thickness and color for card */
+}
+
+/* Midnight Blue Theme */
+.theme-midnight-blue {
+  background-color: #192938;
+  color: #fff;
+}
+.theme-midnight-blue #progress {
+  color: #fff;
+}
+.theme-midnight-blue .card-container {
+  background-color: #17334C;
+  color: #fff;
+  border: 3px solid #244766;
 }
