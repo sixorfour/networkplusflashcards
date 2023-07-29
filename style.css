@@ -63,8 +63,9 @@ body {
 }
 
 .button-container button {
-  padding: 20px; /* Increase padding to make buttons larger */
-  font-size: 18px; /* Increase font size */
+  padding: 20px;
+  font-size: 18px;
+  margin: 0 10px; /* Add equal spacing to the left and right of every button */
 }
 
 .button-container button:first-child {
