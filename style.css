@@ -15,15 +15,15 @@ body {
 }
 
 .card-container {
-  width: 70%;  /* increased size */
-  height: 600px; /* Set a specific height */
+  width: 500px;
+  height: 300px;
   background-color: #f1f1f1;
   margin: 20px auto;
   border: 1px solid #ccc;
   border-radius: 5px;
   position: relative;
   perspective: 1000px;
-  overflow: hidden; /* Ensure content is contained within card */
+  overflow: hidden;
 }
 
 .card-container.flip .card-inner {
@@ -48,50 +48,51 @@ body {
   top: 0;
   left: 0;
   backface-visibility: hidden;
-  padding: 0px; /* Add padding to create spacing within the cards */
+  padding: 20px;
 }
 
 .card-back {
   transform: rotateY(-180deg);
-  overflow: auto; /* Allow content to scroll within card */
+  overflow: auto;
 }
 
 .button-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
+  width: 50%; /* Adjust to control space between buttons */
 }
 
-/* Additional styles for question and answer headers */
+/* Style buttons */
+.button-container button {
+  padding: 15px 30px; /* Adjust to control size of buttons */
+  font-size: 20px; /* Adjust to control text size */
+}
+
 #question-header,
 #answer-header {
-  margin-bottom: 10px; /* Add spacing between header and content */
+  margin-bottom: 10px;
 }
 
-/* Additional styles for question and answer content */
 #question-content {
-  margin-top: 10px; /* Add spacing between header and content */
-  display: block; /* Ensure the question content is displayed as a block */
-},
+  margin-top: 10px;
+  display: block;
+}
+
 #answer-content {
-  margin-top: 10px; /* Add spacing between header and content */
-  display: block; /* Ensure the question content is displayed as a block */
-}
-
-/* Additional Styles */
-#question-wrapper {
-  
-}
-
-#answer-wrapper {
-  
-  align-items: center;
-  height: 50%;
-  
+  margin-top: 10px;
+  display: block;
 }
 
 #progress {
   margin-top: 20px;
   font-size: 20px;
   color: #333;
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    width: 95%;
+    height: 90vh;
+  }
 }
