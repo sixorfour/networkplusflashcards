@@ -116,5 +116,17 @@ body {
 }
 
 #csvFileInput {
-  width: 100%;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+#fileInputLabel {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
 }
