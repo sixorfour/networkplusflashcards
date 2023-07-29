@@ -1,12 +1,10 @@
 let cardData = [];
-let shuffledIndices = []; 
+let shuffledIndices = [];
 let currentCardIndex = 0;
 let cardsShown = 0;
 
 function shuffleArray(array) {
-  // Fisher-Yates (aka Knuth) Shuffle
   let currentIndex = array.length, temporaryValue, randomIndex;
-
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
@@ -22,7 +20,6 @@ function shuffleArray(array) {
 function parseCSV(csv) {
   const lines = csv.split('\n');
   const headers = lines[0].split(',').map(header => header.toLowerCase().trim());
-
   const cardData = [];
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
@@ -73,7 +70,7 @@ function flipCard() {
   cardContainer.classList.toggle('flip');
 }
 
-function lastCard() { 
+function lastCard() {
   if (cardsShown > 0) {
     const cardContainer = document.querySelector('.card-container');
     cardContainer.classList.remove('flip');
@@ -97,7 +94,7 @@ function nextCard() {
 
 document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
-document.getElementById('last-button').addEventListener('click', lastCard); 
+document.getElementById('last-button').addEventListener('click', lastCard);
 
 document.getElementById('csvFileInput').addEventListener('change', function(event) {
   const csvfile = event.target.files[0];
@@ -111,7 +108,7 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
     showCard(currentCardIndex);
     document.getElementById('instructions').style.display = 'none';
     document.getElementById('loadNewButton').style.display = 'block';
-    document.getElementById('file-input-container').style.display = 'none'; // Hide "Choose File" text and button
+    document.getElementById('file-input-container').style.display = 'none';
   };
   reader.readAsText(csvfile);
 });
@@ -135,5 +132,6 @@ window.addEventListener('keydown', function(event) {
 document.getElementById('loadNewButton').addEventListener('click', function() {
   document.getElementById('instructions').style.display = 'block';
   document.getElementById('loadNewButton').style.display = 'none';
-  document.getElementById('file-input-container').style.display = 'block'; // Show "Choose File" text and button
+  document.getElementById('file-input-container').style.display = 'block';
+  document.getElementById('csvFileInput').value = null; // Reset the file input
 });
