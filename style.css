@@ -15,17 +15,15 @@ body {
 }
 
 .card-container {
-  width: 80%; /* Increase width */
-  height: 80vh; /* Increase height */
-  max-width: 700px; /* Limit the maximum width */
-  max-height: 700px; /* Limit the maximum height */
+  width: 500px;
+  height: 300px;
   background-color: #f1f1f1;
   margin: 20px auto;
   border: 1px solid #ccc;
   border-radius: 5px;
   position: relative;
   perspective: 1000px;
-  overflow: hidden; /* Ensure content is contained within card */
+  overflow: hidden;
 }
 
 .card-container.flip .card-inner {
@@ -38,6 +36,8 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-front,
@@ -48,21 +48,40 @@ body {
   top: 0;
   left: 0;
   backface-visibility: hidden;
-  padding: 20px; /* Add padding to create spacing within the cards */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
-  overflow-y: auto; /* Add scroll to card content */
+  padding: 20px;
+}
+
+.card-back {
+  transform: rotateY(-180deg);
+  overflow: auto;
 }
 
 .button-container {
   display: flex;
-  justify-content: space-between; /* Add space between buttons */
+  justify-content: space-between;
   margin-top: 20px;
-  width: 50%; /* Limit the width of the button container */
+  width: 50%; /* Adjust to control space between buttons */
 }
 
+/* Style buttons */
 .button-container button {
-  padding: 15px 30px; /* Increase button size */
-  font-size: 20px; /* Increase font size */
+  padding: 15px 30px; /* Adjust to control size of buttons */
+  font-size: 20px; /* Adjust to control text size */
+}
+
+#question-header,
+#answer-header {
+  margin-bottom: 10px;
+}
+
+#question-content {
+  margin-top: 10px;
+  display: block;
+}
+
+#answer-content {
+  margin-top: 10px;
+  display: block;
 }
 
 #progress {
@@ -71,13 +90,9 @@ body {
   color: #333;
 }
 
-#question-header,
-#answer-header {
-  margin-bottom: 10px; /* Add spacing between header and content */
-}
-
-#question-content,
-#answer-content {
-  margin-top: 10px; /* Add spacing between header and content */
-  display: block; /* Ensure the content is displayed as a block */
+@media (max-width: 600px) {
+  .card-container {
+    width: 95%;
+    height: 90vh;
+  }
 }
