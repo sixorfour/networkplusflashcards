@@ -70,7 +70,7 @@ function showCard(index) {
 
   // Update visibility of "Last" button
   const lastButton = document.getElementById('last-button');
-  lastButton.style.visibility = (cardsShown > 0) ? 'visible' : 'hidden';
+  lastButton.style.display = (cardsShown > 0) ? 'inline-block' : 'none';
 }
 
 function flipCard() {
@@ -114,4 +114,19 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
     showCard(currentCardIndex);
   };
   reader.readAsText(csvfile);
+});
+
+// Add event listener for keyboard presses
+window.addEventListener('keydown', function(event) {
+  switch(event.keyCode) {
+    case 37: // Left arrow key
+      lastCard();
+      break;
+    case 39: // Right arrow key
+      nextCard();
+      break;
+    case 32: // Space bar
+      flipCard();
+      break;
+  }
 });
