@@ -57,9 +57,16 @@ body {
 }
 
 .button-container button {
+  box-sizing: border-box; /* Include padding and border in total width and height */
   padding: 20px;
   font-size: 18px;
   margin: 0 10px; 
+}
+
+/* Additional styles for larger button */
+.larger-button {
+  font-size: 23.4px; /* 30% larger than 18px */
+  padding: 26px; /* 30% larger than 20px */
 }
 
 #question-header,
@@ -85,10 +92,4 @@ body {
     width: 95%;  /* increase width on smaller screens */
     height: 90vh;  /* change height to a viewport-height based calculation */
   }
-}
-
-/* Additional styles for larger button */
-.larger-button {
-  font-size: 23.4px; /* 30% larger than 18px */
-  padding: 26px; /* 30% larger than 20px */
 }
