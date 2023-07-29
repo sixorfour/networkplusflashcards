@@ -56,21 +56,13 @@ body {
   overflow: auto;
 }
 
-.button-container {
-  display: flex; /* Added */
-  justify-content: space-between; /* Added */
-  width: 70%; /* Added */
-  margin: 0 auto; /* Added */
-}
-
 .button-container button {
-  box-sizing: border-box; /* Include padding and border in total width and height */
   padding: 20px;
   font-size: 18px;
+  margin: 0 10px; 
 }
 
-/* Additional styles for larger button */
-.larger-button {
+#flip-button {
   font-size: 23.4px; /* 30% larger than 18px */
   padding: 26px; /* 30% larger than 20px */
 }
