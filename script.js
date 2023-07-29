@@ -1,5 +1,5 @@
 let cardData = [];
-let shuffledIndices = []; // Array to store randomized indices
+let shuffledIndices = []; 
 let currentCardIndex = 0;
 let cardsShown = 0;
 
@@ -27,13 +27,12 @@ function parseCSV(csv) {
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
     if (!values || values.length !== headers.length) {
-      continue; // Skip invalid rows with mismatched values
+      continue; 
     }
     const card = {};
 
     for (let j = 0; j < headers.length; j++) {
       let value = values[j].trim();
-      // If value is enclosed in double quotes, remove them
       if (value.startsWith('"') && value.endsWith('"')) {
         value = value.substring(1, value.length - 1);
       }
@@ -65,7 +64,6 @@ function showCard(index) {
 
   document.getElementById('progress').textContent = `${cardsShown + 1}/${cardData.length} cards`;
 
-  // Update visibility of "Last" button
   const lastButton = document.getElementById('last-button');
   lastButton.style.display = (cardsShown > 0) ? 'inline-block' : 'none';
 }
@@ -75,7 +73,7 @@ function flipCard() {
   cardContainer.classList.toggle('flip');
 }
 
-function lastCard() { // Add this function to handle the "Last" button
+function lastCard() { 
   if (cardsShown > 0) {
     const cardContainer = document.querySelector('.card-container');
     cardContainer.classList.remove('flip');
@@ -99,7 +97,7 @@ function nextCard() {
 
 document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
-document.getElementById('last-button').addEventListener('click', lastCard); // Add event listener for "Last" button
+document.getElementById('last-button').addEventListener('click', lastCard); 
 
 document.getElementById('csvFileInput').addEventListener('change', function(event) {
   const csvfile = event.target.files[0];
@@ -107,17 +105,17 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
   reader.onload = function(e) {
     const csvData = e.target.result;
     cardData = parseCSV(csvData);
-    shuffledIndices = shuffleArray([...Array(cardData.length).keys()]); // Create and shuffle an array of indices
+    shuffledIndices = shuffleArray([...Array(cardData.length).keys()]); 
     currentCardIndex = shuffledIndices[0];
     cardsShown = 0;
     showCard(currentCardIndex);
     document.getElementById('instructions').style.display = 'none';
     document.getElementById('loadNewButton').style.display = 'block';
+    document.getElementById('file-input-container').style.display = 'none'; // Hide "Choose File" text and button
   };
   reader.readAsText(csvfile);
 });
 
-// Add event listener for keyboard presses
 window.addEventListener('keydown', function(event) {
   switch(event.keyCode) {
     case 37: // Left arrow key
@@ -135,7 +133,7 @@ window.addEventListener('keydown', function(event) {
 });
 
 document.getElementById('loadNewButton').addEventListener('click', function() {
-  // Show instructions and hide "Load New" button
   document.getElementById('instructions').style.display = 'block';
   document.getElementById('loadNewButton').style.display = 'none';
+  document.getElementById('file-input-container').style.display = 'block'; // Show "Choose File" text and button
 });
