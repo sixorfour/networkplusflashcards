@@ -12,22 +12,18 @@
       <label for="csvFileInput">Choose File:</label>
       <input type="file" id="csvFileInput" title="Upload CSV file">
     </div>
-    <div class="card-container" style="width: 80%; height: 80%;">
-      <div class="card-inner" style="width: 100%; height: 100%;">
+    <div class="card-container">
+      <div class="card-inner">
         <div class="card-front">
           <h2 id="question-header-front">Question</h2>
           <p id="question-content-front"></p>
         </div>
         <div class="card-back">
-          <div id="question-wrapper-back">
-            <h2 id="question-header-back">Question</h2>
-            <p id="question-content-back"></p>
-          </div>
-          <div id="answer-wrapper">
-            <hr>
-            <h2 id="answer-header">Answer</h2>
-            <p id="answer-content"></p>
-          </div>
+          <h2 id="question-header-back">Question</h2>
+          <p id="question-content-back"></p>
+          <hr>
+          <h2 id="answer-header">Answer</h2>
+          <p id="answer-content"></p>
         </div>
       </div>
     </div>
@@ -35,7 +31,7 @@
       <button id="flip-button">Flip Card</button>
       <button id="next-button">Next</button>
     </div>
-    <div id="progress"></div>
+    <p id="progress"></p>
   </div>
   <script src="script.js"></script>
 </body>
