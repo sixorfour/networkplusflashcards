@@ -93,3 +93,10 @@ body {
     height: 90vh;  /* change height to a viewport-height based calculation */
   }
 }
+
+.top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
