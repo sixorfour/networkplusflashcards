@@ -70,7 +70,7 @@ function showCard(index) {
 
   // Update visibility of "Last" button
   const lastButton = document.getElementById('last-button');
-  lastButton.style.display = (cardsShown > 0) ? 'inline-block' : 'none';
+  lastButton.style.display = (cardsShown > 1) ? 'inline-block' : 'none';  // Changed this line
 }
 
 function flipCard() {
