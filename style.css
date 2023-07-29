@@ -67,6 +67,10 @@ body {
   font-size: 18px; /* Increase font size */
 }
 
+.button-container button:first-child {
+  margin-right: 10px; /* Add space between buttons */
+}
+
 #question-header,
 #answer-header {
   margin-bottom: 10px;
