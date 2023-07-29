@@ -62,14 +62,14 @@ body {
 }
 
 .button-container button {
-  padding: 18px;
+  padding: 10px; /* reduced from 18px to 10px */
   font-size: 18px;
   margin: 0 30px; 
 }
 
 #flip-button {
   font-size: 23.4px; /* 30% larger than 18px */
-  padding: 26px; /* 30% larger than 20px */
+  padding: 16px; /* reduced from 26px to 16px */
   font-weight: bold; /* Make the text bold */
 }
 
