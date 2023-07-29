@@ -21,10 +21,11 @@ function parseCSV(csv) {
   const lines = csv.split('\n');
   const headers = lines[0].split(',').map(header => header.toLowerCase().trim());
   const cardData = [];
+
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
     if (!values || values.length !== headers.length) {
-      continue; 
+      continue;
     }
     const card = {};
 
@@ -102,15 +103,28 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
   reader.onload = function(e) {
     const csvData = e.target.result;
     cardData = parseCSV(csvData);
-    shuffledIndices = shuffleArray([...Array(cardData.length).keys()]); 
+    shuffledIndices = shuffleArray([...Array(cardData.length).keys()]);
     currentCardIndex = shuffledIndices[0];
     cardsShown = 0;
     showCard(currentCardIndex);
     document.getElementById('instructions').style.display = 'none';
     document.getElementById('loadNewButton').style.display = 'block';
     document.getElementById('file-input-container').style.display = 'none';
+    document.getElementById('chooseFileLabel').style.display = 'none';
   };
   reader.readAsText(csvfile);
+});
+
+document.getElementById('loadNewButton').addEventListener('click', function() {
+  document.getElementById('instructions').style.display = 'block';
+  document.getElementById('loadNewButton').style.display = 'none';
+  document.getElementById('file-input-container').style.display = 'block';
+  document.getElementById('chooseFileLabel').style.display = 'block';
+  document.getElementById('csvFileInput').value = null;
+  cardData = [];
+  shuffledIndices = [];
+  currentCardIndex = 0;
+  cardsShown = 0;
 });
 
 window.addEventListener('keydown', function(event) {
@@ -127,16 +141,4 @@ window.addEventListener('keydown', function(event) {
       nextCard();
       break;
   }
-});
-
-document.getElementById('loadNewButton').addEventListener('click', function() {
-  document.getElementById('instructions').style.display = 'block';
-  document.getElementById('loadNewButton').style.display = 'none';
-  document.getElementById('file-input-container').style.display = 'block';
-  document.getElementById('csvFileInput').value = null; // Reset the file input
-  // Reset card-related variables
-  cardData = [];
-  shuffledIndices = [];
-  currentCardIndex = 0;
-  cardsShown = 0;
 });
