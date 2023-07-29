@@ -2,6 +2,7 @@ let cardData = [];
 let shuffledIndices = []; // Array to store randomized indices
 let currentCardIndex = 0;
 let cardsShown = 0;
+let previousCardIndex = null; // Add this line to keep track of the previous card index
 
 function shuffleArray(array) {
   // Fisher-Yates (aka Knuth) Shuffle
@@ -18,6 +19,8 @@ function shuffleArray(array) {
 
   return array;
 }
+
+// Rest of the parseCSV function...
 
 function parseCSV(csv) {
   const lines = csv.split('\n');
@@ -64,11 +67,23 @@ function showCard(index) {
   answerHeader.textContent = 'Answer';
 
   document.getElementById('progress').textContent = `${cardsShown + 1}/${cardData.length} cards`;
+
+  // Update visibility of "Last" button
+  const lastButton = document.getElementById('last-button');
+  lastButton.style.display = (cardsShown > 0) ? 'inline-block' : 'none';
 }
 
 function flipCard() {
   const cardContainer = document.querySelector('.card-container');
   cardContainer.classList.toggle('flip');
+}
+
+function lastCard() { // Add this function to handle the "Last" button
+  const cardContainer = document.querySelector('.card-container');
+  cardContainer.classList.remove('flip');
+  cardsShown -= 1;
+  currentCardIndex = shuffledIndices[cardsShown];
+  showCard(currentCardIndex);
 }
 
 function nextCard() {
@@ -85,6 +100,7 @@ function nextCard() {
 
 document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
+document.getElementById('last-button').addEventListener('click', lastCard); // Add event listener for "Last" button
 
 document.getElementById('csvFileInput').addEventListener('change', function(event) {
   const csvfile = event.target.files[0];
