@@ -94,6 +94,30 @@ function nextCard() {
   }
 }
 
+// Get references to the elements we'll be working with
+const themeSelector = document.getElementById('themeSelector');
+const cardContainer = document.querySelector('.progress');
+const cardContainer = document.querySelector('.card-container');
+const body = document.querySelector('body');
+
+// Add an event listener to the theme selector
+themeSelector.addEventListener('change', () => {
+  console.log('Theme selected:', themeSelector.value);
+  const selectedTheme = themeSelector.value;
+
+  // Remove any existing theme classes from the body and card container
+  body.classList.remove('theme-default', 'theme-dark', 'theme-midnight-blue');
+  cardContainer.classList.remove('theme-default', 'theme-dark', 'theme-midnight-blue');
+
+  // Add the selected theme class to the body and card container
+  body.classList.add(themeSelector.value);
+  cardContainer.classList.add(themeSelector.value);
+});
+
+// Add a default theme class on page load
+body.classList.add('theme-default');
+cardContainer.classList.add('theme-default');
+
 document.getElementById('flip-button').addEventListener('click', flipCard);
 document.getElementById('next-button').addEventListener('click', nextCard);
 document.getElementById('last-button').addEventListener('click', lastCard);
