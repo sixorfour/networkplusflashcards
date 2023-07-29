@@ -128,6 +128,8 @@ window.addEventListener('keydown', function(event) {
       nextCard();
       break;
     case 32: // Space bar
+    case 38: // Up arrow key
+    case 40: // Down arrow key
       flipCard();
       break;
   }
