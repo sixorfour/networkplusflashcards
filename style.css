@@ -81,8 +81,9 @@ body {
 
 #progress {
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 30px;
   color: #333;
+  font-weight: bold; /* Make the text bold */
 }
 
 /* Media query for screens smaller than 600px */
