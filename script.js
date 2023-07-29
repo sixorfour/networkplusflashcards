@@ -61,7 +61,7 @@ function showCard(index) {
   answerHeader.textContent = 'Answer';
 
   document.getElementById('progress').textContent = `${cardsShown + 1}/${cardData.length} cards`;
-  document.getElementById('progress').style.display = 'block';
+  document.getElementById('progress').style.display = 'block'; 
 
   const lastButton = document.getElementById('last-button');
   lastButton.style.display = (cardsShown > 0) ? 'inline-block' : 'none';
@@ -131,7 +131,7 @@ document.getElementById('loadNewButton').addEventListener('click', function() {
   document.getElementById('file-input-container').style.display = 'block';
   document.querySelector('.card-container').style.display = 'none';
   document.querySelector('.button-container').style.display = 'none';
-  document.getElementById('progress').style.display = 'none';
+  document.getElementById('progress').style.display = 'none'; 
   document.getElementById('csvFileInput').value = null;
   cardData = [];
   shuffledIndices = [];
