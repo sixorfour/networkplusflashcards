@@ -96,7 +96,6 @@ function nextCard() {
 
 // Get references to the elements we'll be working with
 const themeSelector = document.getElementById('themeSelector');
-const cardContainer = document.querySelector('.progress');
 const cardContainer = document.querySelector('.card-container');
 const body = document.querySelector('body');
 
