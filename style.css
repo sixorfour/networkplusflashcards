@@ -56,10 +56,17 @@ body {
   overflow: auto;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+/* Styles for all buttons */
+.button-container button {
+  padding: 20px;
+  font-size: 18px;
+  margin: 0 10px; 
+}
+
+/* Additional styles for larger button */
+.larger-button {
+  font-size: 23.4px; /* 30% larger than 18px */
+  padding: 26px; /* 30% larger than 20px */
 }
 
 .button-container button {
