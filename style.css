@@ -15,7 +15,7 @@ body {
 }
 
 .card-container {
-  display: none; 
+  display: none;
   width: 70%;
   height: 600px;
   background-color: #f1f1f1;
@@ -58,7 +58,7 @@ body {
 }
 
 .button-container {
-  display: none; 
+  display: none;
 }
 
 .button-container button {
@@ -68,16 +68,9 @@ body {
 }
 
 #flip-button {
-  font-size: 30px; 
-  padding: 30px;
-  font-weight: bold;
-  min-width: 200px;
-}
-
-#next-button,
-#last-button {
-  font-size: 18px;
-  padding: 18px;
+  font-size: 23.4px; /* 30% larger than 18px */
+  padding: 26px; /* 30% larger than 20px */
+  font-weight: bold; /* Make the text bold */
 }
 
 #question-header,
@@ -95,7 +88,7 @@ body {
   margin-top: 20px;
   font-size: 30px;
   color: #333;
-  font-weight: bold;
+  font-weight: bold; /* Make the text bold */
 }
 
 @media screen and (max-width: 600px) {
