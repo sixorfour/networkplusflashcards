@@ -56,20 +56,14 @@ function showCard(index) {
   const answerContent = document.getElementById('answer-content');
 
   questionContentFront.innerHTML = `<p>${card['question']}</p>`;
-  questionContentBack.innerHTML = `<p>${card['question']}</p>`; // Added this line to display question content on the back
+  questionContentBack.innerHTML = `<p>${card['question']}</p>`;
   answerContent.innerHTML = `<p>${card['answer']}</p>`;
 
   questionHeaderFront.textContent = 'Question';
-  questionHeaderBack.textContent = 'Question'; // Make sure this says 'Question' as well
+  questionHeaderBack.textContent = 'Question';
   answerHeader.textContent = 'Answer';
 
-  document.getElementById('progress').textContent = `${index + 1}/${cardData.length} cards`;
-}
-
-
-function updateProgress() {
-  const progress = document.getElementById('progress');
-  progress.textContent = `${cardsShown + 1}/${shuffledIndices.length} cards`;
+  document.getElementById('progress').textContent = `${cardsShown + 1}/${cardData.length} cards`;
 }
 
 function flipCard() {
