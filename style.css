@@ -111,8 +111,7 @@ body {
 }
 
 #file-input-container {
-  width: 100px;
-  overflow: hidden;
+  display: inline-block;
 }
 
 #csvFileInput {
@@ -129,4 +128,10 @@ body {
   background-color: #4CAF50;
   color: white;
   cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 120px;
+  text-align: center;
 }
