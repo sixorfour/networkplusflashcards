@@ -61,7 +61,7 @@ function showCard(index) {
   answerHeader.textContent = 'Answer';
 
   document.getElementById('progress').textContent = `${cardsShown + 1}/${cardData.length} cards`;
-  document.getElementById('progress').style.display = 'block'; // Add this line
+  document.getElementById('progress').style.display = 'block';
 
   const lastButton = document.getElementById('last-button');
   lastButton.style.display = (cardsShown > 0) ? 'inline-block' : 'none';
@@ -109,6 +109,10 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
     cardsShown = 0;
     showCard(currentCardIndex);
     document.getElementById('instructions').style.display = 'none';
+    document.getElementById('instructions1').style.display = 'none';
+    document.getElementById('instructions2').style.display = 'none';
+    document.getElementById('instructions3').style.display = 'none';
+    document.getElementById('instructions4').style.display = 'none';
     document.getElementById('loadNewButton').style.display = 'block';
     document.getElementById('file-input-container').style.display = 'none';
     document.querySelector('.card-container').style.display = 'block';
@@ -119,11 +123,15 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
 
 document.getElementById('loadNewButton').addEventListener('click', function() {
   document.getElementById('instructions').style.display = 'block';
+  document.getElementById('instructions1').style.display = 'block';
+  document.getElementById('instructions2').style.display = 'block';
+  document.getElementById('instructions3').style.display = 'block';
+  document.getElementById('instructions4').style.display = 'block';
   document.getElementById('loadNewButton').style.display = 'none';
   document.getElementById('file-input-container').style.display = 'block';
   document.querySelector('.card-container').style.display = 'none';
   document.querySelector('.button-container').style.display = 'none';
-  document.getElementById('progress').style.display = 'none'; // Add this line
+  document.getElementById('progress').style.display = 'none';
   document.getElementById('csvFileInput').value = null;
   cardData = [];
   shuffledIndices = [];
