@@ -2,7 +2,6 @@ let cardData = [];
 let shuffledIndices = []; // Array to store randomized indices
 let currentCardIndex = 0;
 let cardsShown = 0;
-let previousCardIndex = null; // Add this line to keep track of the previous card index
 
 function shuffleArray(array) {
   // Fisher-Yates (aka Knuth) Shuffle
@@ -19,8 +18,6 @@ function shuffleArray(array) {
 
   return array;
 }
-
-// Rest of the parseCSV function...
 
 function parseCSV(csv) {
   const lines = csv.split('\n');
@@ -114,9 +111,8 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
     currentCardIndex = shuffledIndices[0];
     cardsShown = 0;
     showCard(currentCardIndex);
-  // Hide instructions and show "Load New" button
     document.getElementById('instructions').style.display = 'none';
-    document.getElementById('loadNewButton').style.display = 'inline-block';
+    document.getElementById('loadNewButton').style.display = 'block';
   };
   reader.readAsText(csvfile);
 });
@@ -127,13 +123,19 @@ window.addEventListener('keydown', function(event) {
     case 37: // Left arrow key
       lastCard();
       break;
+    case 38: // Up arrow key
+    case 40: // Down arrow key
+    case 32: // Space bar
+      flipCard();
+      break;
     case 39: // Right arrow key
       nextCard();
       break;
-    case 32: // Space bar
-    case 38: // Up arrow key
-    case 40: // Down arrow key
-      flipCard();
-      break;
   }
+});
+
+document.getElementById('loadNewButton').addEventListener('click', function() {
+  // Show instructions and hide "Load New" button
+  document.getElementById('instructions').style.display = 'block';
+  document.getElementById('loadNewButton').style.display = 'none';
 });
