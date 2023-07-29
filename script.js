@@ -114,6 +114,9 @@ document.getElementById('csvFileInput').addEventListener('change', function(even
     currentCardIndex = shuffledIndices[0];
     cardsShown = 0;
     showCard(currentCardIndex);
+  // Hide instructions and show "Load New" button
+    document.getElementById('instructions').style.display = 'none';
+    document.getElementById('loadNewButton').style.display = 'inline-block';
   };
   reader.readAsText(csvfile);
 });
