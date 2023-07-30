@@ -59,21 +59,17 @@ body {
 .card-back {
   transform: rotateY(-180deg);
   overflow: auto;
-  display: grid; /* Change from flex to grid */
-  grid-template-rows: 1fr 1px 1fr; /* Divide the space into two equal halves with a 1px row for the divider */
-}
-
-.question-section,
-.answer-section {
-  padding: 20px; /* Adjust as needed */
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden; /* Add this line */
 }
 
 .divider {
-  grid-row: 2; /* Place the divider in the second row */
+  position: relative;
   width: 100%;
   border: none;
-  border-top: 1px solid; /* Default color */
+  border-top: 1px solid;
 }
 
 .button-container {
@@ -88,8 +84,8 @@ body {
 }
 
 #flip-button {
-  font-size: 23.4px; /* 30% larger than 18px */
-  font-weight: bold; /* Make the text bold */
+  font-size: 23.4px;
+  font-weight: bold;
 }
 
 #question-header,
@@ -107,7 +103,7 @@ body {
   margin-top: 20px;
   font-size: 30px;
   color: #333;
-  font-weight: bold; /* Make the text bold */
+  font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {
@@ -162,12 +158,12 @@ body {
   padding: 8px;
   background-color: #fff;
   color: #000;
-  border-radius: 5px; /* Optional: Add border-radius for a rounded appearance */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Add a box shadow for a visual separation */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   opacity: 0.1;
-  transition: opacity 0.3s ease; /* Add transition for smooth background-color change */
+  transition: opacity 0.3s ease;
 }
 
 .theme-selector-container:hover {
-  opacity: 1; /* Set the opacity to 100% on hover */
+  opacity: 1;
 }
