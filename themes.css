@@ -4,6 +4,11 @@
   background-color: #333;
   color: #fff;
 }
+		/* Color for the divider in dark theme */
+.theme-dark .divider {
+  border-color: #4C4C4C;
+}
+
 		/* Theme Selector Attributes */
 .theme-dark .theme-selector-container {
   background-color: #404040;
@@ -25,6 +30,11 @@
   background-color: #192938;
   color: #fff;
 }
+
+.theme-midnight-blue .divider {
+  border-color: #244766;
+}
+
 .theme-midnight-blue .theme-selector-container {
   background-color: #17334C;
   color: #fff;
