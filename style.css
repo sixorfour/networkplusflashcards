@@ -58,11 +58,7 @@ body {
 
 .card-front {
   padding: 20px;
-  padding-right: 60px;
-}
-
-.card-front h2, .card-front p {
-  margin: 0; /* Add this line */
+  padding-left: 50px;
 }
 
 .card-back {
