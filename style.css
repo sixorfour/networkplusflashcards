@@ -59,18 +59,13 @@ body {
 .card-back {
   transform: rotateY(-180deg);
   overflow: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.question-section,
-.answer-section {
-  padding: 20px; /* Adjust as needed */
-  overflow: auto;
+  display: flex; /* Add this line */
+  flex-direction: column; /* Add this line */
+  justify-content: space-between; /* Add this line */
 }
 
 .divider {
+  position: relative; /* Change from absolute to relative */
   width: 100%;
   border: none;
   border-top: 1px solid; /* Default color */
