@@ -1,0 +1,39 @@
+/* Theme: Dark Theme */
+		/* Body Attributes */
+.theme-dark {
+  background-color: #333;
+  color: #fff;
+}
+		/* Theme Selector Attributes */
+.theme-dark .theme-selector-container {
+  background-color: #404040;
+  color: #fff;
+}
+		/* Progress Text Attributes */
+.theme-dark #progress {
+  color: #fff;
+}
+		/* Card Attributes */
+.theme-dark .card-container {
+  background-color: #404040;
+  color: #fff;
+  border: 2px solid #4C4C4C;
+}
+
+/* Midnight Blue Theme */
+.theme-midnight-blue {
+  background-color: #192938;
+  color: #fff;
+}
+.theme-midnight-blue .theme-selector-container {
+  background-color: #17334C;
+  color: #fff;
+}
+.theme-midnight-blue #progress {
+  color: #fff;
+}
+.theme-midnight-blue .card-container {
+  background-color: #17334C;
+  color: #fff;
+  border: 3px solid #244766;
+}

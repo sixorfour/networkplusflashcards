@@ -156,31 +156,3 @@ body {
 .theme-selector-container:hover {
   opacity: 1; /* Set the opacity to 100% on hover */
 }
-
-/* Example Theme: Dark Theme */
-.theme-dark {
-  background-color: #333; /* Background color for the body */
-  color: #fff; /* Text color for body */
-}
-.theme-dark #progress {
-  color: #fff; /* Text color for body */
-}
-.theme-dark .card-container {
-  background-color: #404040; /* Background color for the card */
-  color: #fff; /* Text color for card */
-  border: 2px solid #4C4C4C; /* Border thickness and color for card */
-}
-
-/* Midnight Blue Theme */
-.theme-midnight-blue {
-  background-color: #192938;
-  color: #fff;
-}
-.theme-midnight-blue #progress {
-  color: #fff;
-}
-.theme-midnight-blue .card-container {
-  background-color: #17334C;
-  color: #fff;
-  border: 3px solid #244766;
-}
