@@ -59,18 +59,23 @@ body {
 .card-back {
   transform: rotateY(-180deg);
   overflow: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow-x: hidden;
-  align-content: start;
+  display: grid; /* Change from flex to grid */
+  grid-template-rows: 1fr 1px 1fr; /* Divide the space into two equal halves with a 1px row for the divider */
+  overflow-x: hidden; /* Add this line */
+}
+
+.question-section,
+.answer-section {
+  padding: 20px; /* Adjust as needed */
+  overflow: auto;
+  align-content: start; /* Add this line */
 }
 
 .divider {
-  position: relative;
+  grid-row: 2; /* Place the divider in the second row */
   width: 100%;
   border: none;
-  border-top: 1px solid;
+  border-top: 1px solid; /* Default color */
 }
 
 .button-container {
@@ -85,8 +90,8 @@ body {
 }
 
 #flip-button {
-  font-size: 23.4px;
-  font-weight: bold;
+  font-size: 23.4px; /* 30% larger than 18px */
+  font-weight: bold; /* Make the text bold */
 }
 
 #question-header,
@@ -104,7 +109,7 @@ body {
   margin-top: 20px;
   font-size: 30px;
   color: #333;
-  font-weight: bold;
+  font-weight: bold; /* Make the text bold */
 }
 
 @media screen and (max-width: 600px) {
