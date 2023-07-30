@@ -68,7 +68,7 @@ body {
   overflow-x: hidden; /* Add this line */
 }
 
-.question-section,
+/* .question-section, */
 .answer-section {
   padding: 20px; /* Adjust as needed */
   overflow: auto;
