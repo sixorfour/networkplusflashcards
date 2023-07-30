@@ -61,6 +61,11 @@ body {
   padding-right: 60px;
 }
 
+.card-front h2, .card-front p {
+  margin: 0; /* Add this line */
+  padding: 0; /* Add this line */
+}
+
 .card-back {
   transform: rotateY(-180deg);
   overflow: auto;
