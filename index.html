@@ -26,25 +26,25 @@
           <p id="question-content-front"></p>
         </div>
         <div class="card-back">
-  <div class="question-section">
-    <h2 id="question-header-back">Question</h2>
-    <p id="question-content-back"></p>
-  </div>
-  <hr class="divider"> <!-- Add a class to the horizontal divider -->
-  <div class="answer-section">
-    <h2 id="answer-header">Answer</h2>
-    <p id="answer-content"></p>
-  </div>
-</div>
+          <div class="question-section">
+            <h2 id="question-header-back">Question</h2>
+            <p id="question-content-back"></p>
+          </div>
+          <hr class="divider"> <!-- Add a class to the horizontal divider -->
+          <div class="answer-section">
+            <h2 id="answer-header">Answer</h2>
+            <p id="answer-content"></p>
+          </div>
+        </div>
+        <div class="button-container">
+          <button id="last-button" style="display: none;">Last</button>
+          <button id="flip-button">Flip Card</button>
+          <button id="next-button">Next</button>
+        </div>
+      </div>
+      <p id="progress"></p>
     </div>
-    <div class="button-container">
-      <button id="last-button" style="display: none;">Last</button>
-      <button id="flip-button">Flip Card</button>
-      <button id="next-button">Next</button>
-    </div>
-    <p id="progress"></p>
-  </div>
-      <div class="theme-selector-container">
+    <div class="theme-selector-container">
       <label for="themeSelector">Theme:</label>
       <select id="themeSelector">
         <option value="theme-default">Default Theme</option>
@@ -52,7 +52,8 @@
         <option value="theme-midnight-blue">Midnight Blue Theme</option>
         <!-- Add more theme options as desired -->
       </select>
-      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
