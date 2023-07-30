@@ -61,6 +61,15 @@ body {
   overflow: auto;
 }
 
+.divider {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  border: none;
+  border-top: 1px solid; /* Default color */
+}
+
 .button-container {
   display: none;
 }
