@@ -56,6 +56,10 @@ body {
   padding: 0px;
 }
 
+.card-front {
+  padding: 20px;
+}
+
 .card-back {
   transform: rotateY(-180deg);
   overflow: auto;
