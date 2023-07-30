@@ -62,7 +62,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-x: hidden; /* Add this line */
+  overflow-x: hidden;
+  align-content: start;
 }
 
 .divider {
