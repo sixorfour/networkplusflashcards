@@ -6,7 +6,7 @@
 }
 		/* Color for the divider in dark theme */
 .theme-dark .divider {
-  border-color: #4C4C4C;
+  border: 3px solid #4C4C4C
 }
 
 		/* Theme Selector Attributes */
@@ -22,7 +22,7 @@
 .theme-dark .card-container {
   background-color: #404040;
   color: #fff;
-  border: 2px solid #4C4C4C;
+  border: 3px solid #4C4C4C;
 }
 
 /* Midnight Blue Theme */
@@ -32,7 +32,7 @@
 }
 
 .theme-midnight-blue .divider {
-  border-color: #244766;
+  border: 3px solid #244766;
 }
 
 .theme-midnight-blue .theme-selector-container {
