@@ -59,13 +59,18 @@ body {
 .card-back {
   transform: rotateY(-180deg);
   overflow: auto;
-  display: flex; /* Add this line */
-  flex-direction: column; /* Add this line */
-  justify-content: space-between; /* Add this line */
+  display: grid; /* Change from flex to grid */
+  grid-template-rows: 1fr 1px 1fr; /* Divide the space into two equal halves with a 1px row for the divider */
+}
+
+.question-section,
+.answer-section {
+  padding: 20px; /* Adjust as needed */
+  overflow: auto;
 }
 
 .divider {
-  position: relative; /* Change from absolute to relative */
+  grid-row: 2; /* Place the divider in the second row */
   width: 100%;
   border: none;
   border-top: 1px solid; /* Default color */
