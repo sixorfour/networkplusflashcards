@@ -59,12 +59,13 @@ body {
 .card-back {
   transform: rotateY(-180deg);
   overflow: auto;
+  display: flex; /* Add this line */
+  flex-direction: column; /* Add this line */
+  justify-content: space-between; /* Add this line */
 }
 
 .divider {
-  position: absolute;
-  top: 50%;
-  left: 0;
+  position: relative; /* Change from absolute to relative */
   width: 100%;
   border: none;
   border-top: 1px solid; /* Default color */
